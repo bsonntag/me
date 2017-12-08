@@ -14,7 +14,7 @@ const socialNetworks: Array<SocialNetwork> = [{
 }, {
   Icon: Icon.linkedIn,
   key: 'linkedIn',
-  url: '',
+  url: 'https://www.linkedin.com/in/benjamim-sonntag-6bb562aa/',
 }];
 
 export default {
