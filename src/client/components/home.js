@@ -1,7 +1,7 @@
 // @flow
 
 import type { Translate } from 'client/locales';
-import { colors, spacing } from 'client/styles';
+import { colors, padding } from 'client/styles';
 import { translator } from 'client/locales';
 import React from 'react';
 import Type from 'client/components/type';
@@ -14,7 +14,8 @@ type Props = {
 const Container = styled.div`
   color: ${colors.textColor};
   flex: 1;
-  padding: ${spacing.large};
+
+  ${padding('large')}
 `;
 
 const Home = ({ translate }: Props) => (

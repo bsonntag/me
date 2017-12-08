@@ -1,8 +1,8 @@
 // @flow
 
 import { css } from 'styled-components';
+import { margin } from './spacing';
 import { round } from 'lodash';
-import { spacing } from './spacing';
 
 type TypeConfig = {|
   element: string,
@@ -17,7 +17,7 @@ const heading: TypeConfig = {
   fontSize: 24,
   fontWeight: 'normal',
   lineHeight: 32,
-  marginBottom: spacing.medium,
+  marginBottom: margin.bottom('medium'),
 };
 
 const title: TypeConfig = {
@@ -25,7 +25,7 @@ const title: TypeConfig = {
   fontSize: 20,
   fontWeight: 'bold',
   lineHeight: 24,
-  marginBottom: spacing.small,
+  marginBottom: margin.bottom('small'),
 };
 
 const subheading: TypeConfig = {
@@ -52,7 +52,7 @@ export const createTypeStyle = ({
   font-weight: ${fontWeight};
   line-height: ${round(lineHeight / fontSize, 5)}em;
 
-  ${marginBottom ? `margin-bottom: ${marginBottom};` : ''}
+  ${marginBottom}
 `;
 
 export const typography = {
