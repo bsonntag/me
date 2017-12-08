@@ -1,0 +1,12 @@
+[ignore]
+.*/dist/.*
+
+[libs]
+flow-typed/custom
+
+[options]
+esproposal.class_instance_fields=enable
+esproposal.class_static_fields=enable
+module.ignore_non_literal_requires=true
+module.system.node.resolve_dirname=src
+module.system.node.resolve_dirname=node_modules

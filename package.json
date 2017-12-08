@@ -1,0 +1,42 @@
+{
+  "name": "bsonntag.me",
+  "version": "0.0.0",
+  "private": true,
+  "description": "My personal website",
+  "license": "UNLICENSED",
+  "author": "Benjamim Sonntag <benjamimsonntag@gmail.com>",
+  "main": "./src/index.js",
+  "repository": "https://github.com/bsonntag/bsonntag.github.io",
+  "scripts": {
+    "lint": "eslint src",
+    "start": "nodemon --watch src --exec babel-node src/server/index.js"
+  },
+  "dependencies": {
+    "color": "^2.0.1",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "recompose": "^0.26.0",
+    "styled-components": "^2.2.4",
+    "styled-normalize": "^2.2.1",
+    "styled-tools": "^0.2.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-module-resolver": "^3.0.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.12.1",
+    "eslint-config-seegno": "^10.0.0",
+    "eslint-plugin-flowtype": "^2.39.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-react": "^7.5.1",
+    "flow-bin": "^0.60.1",
+    "nodemon": "^1.12.5",
+    "sort-package-json": "^1.7.1"
+  }
+}
