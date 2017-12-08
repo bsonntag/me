@@ -1,7 +1,7 @@
 // @flow
 
 import type { Translate } from 'client/locales';
-import { colors, spacing, units } from 'client/styles';
+import { colors, margin, media, padding, units } from 'client/styles';
 import { translator } from 'client/locales';
 import React from 'react';
 import RoundImage from 'client/components/round-image';
@@ -19,25 +19,62 @@ const Container = styled.div`
   color: ${colors.alternateTextColor};
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  padding-bottom: ${spacing.large};
-  padding-top: ${spacing.large};
-  width: ${units(50)};
+
+  ${padding('large')}
+
+  > :not(:last-child) {
+    ${margin.bottom('medium')}
+  }
+
+  ${media.min.sm`
+    flex-direction: row;
+    justify-content: center;
+
+    > :not(:last-child) {
+      ${margin.bottom('none')}
+      ${margin.right('medium')}
+    }
+  `}
+
+  ${media.min.md`
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh;
+    width: ${units(50)};
+
+    > :not(:last-child) {
+      ${margin.bottom('medium')}
+      ${margin.right('none')}
+    }
+  `}
 `;
 
-const Picture = styled(RoundImage)`
-  margin-bottom: ${spacing.medium};
+const InfoContainer = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  ${media.min.sm`
+    align-items: flex-start;
+  `}
+
+  ${media.min.md`
+    align-items: center;
+  `}
 `;
 
 const Sidebar = ({ translate }: Props) => (
   <Container>
-    <Picture />
+    <RoundImage />
 
-    <Type.heading>
-      {translate('name')}
-    </Type.heading>
+    <InfoContainer>
+      <Type.heading>
+        {translate('name')}
+      </Type.heading>
 
-    <SocialNetworks />
+      <SocialNetworks />
+    </InfoContainer>
   </Container>
 );
 
