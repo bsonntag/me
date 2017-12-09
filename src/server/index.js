@@ -12,6 +12,8 @@ const app = express();
 
 app.use(morgan('tiny'));
 
+app.use('/assets', express.static('src/assets'));
+
 app.get('*', (request, response) => {
   const html = renderToString(renderClient());
 
