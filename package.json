@@ -8,6 +8,7 @@
   "main": "./src/index.js",
   "repository": "https://github.com/bsonntag/bsonntag.github.io",
   "scripts": {
+    "bundle": "rm -rf dist && mkdir dist && babel-node src/bin/bundle.js",
     "lint": "eslint src",
     "start": "nodemon --watch src --exec babel-node src/server/index.js"
   },
