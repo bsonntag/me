@@ -12,6 +12,7 @@
     "start": "nodemon --watch src --exec babel-node src/server/index.js"
   },
   "dependencies": {
+    "bluebird": "^3.5.1",
     "color": "^2.0.1",
     "express": "^4.16.2",
     "morgan": "^1.9.0",
