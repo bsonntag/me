@@ -7,6 +7,14 @@ import React from 'react';
 import entities from 'client/entities';
 import styled from 'styled-components';
 
+const ScallingLink = styled(ExternalLink)`
+  transition: transform 200ms ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+`;
+
 const Container = styled.div`
   display: flex;
 
@@ -17,12 +25,12 @@ const Container = styled.div`
 
 const renderSocialNetwork = ({ Icon, key, url }: SocialNetwork) => {
   return (
-    <ExternalLink
+    <ScallingLink
       href={url}
       key={key}
     >
       <Icon size={units(4)} />
-    </ExternalLink>
+    </ScallingLink>
   );
 };
 
