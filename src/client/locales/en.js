@@ -1,5 +1,7 @@
 // @flow
 
+import { externalLink } from './utils';
+
 const name = 'Benjamim Sonntag';
 
 export default {
@@ -17,6 +19,13 @@ export default {
         everything, from small scripts to full web applications.
       `,
       title: 'What I do',
+    },
+    work: {
+      description: `
+        I'm currently working at ${externalLink('Seegno', 'https://seegno.com')}
+        doing some awesome stuff.
+      `,
+      title: 'Work',
     },
   },
   name,

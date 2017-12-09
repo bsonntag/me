@@ -11,7 +11,7 @@ type TranslatorProps = {
   translate: Translate,
 };
 
-const translate: Translate = path => get(locales, path);
+const translate: Translate = path => get(locales, path, path);
 
 export function translator<Props: {}>(Component: ComponentType<TranslatorProps & Props>): ComponentType<Props> {
   return function Translator(props) {

@@ -1,7 +1,7 @@
 // @flow
 
 import type { Translate } from 'client/locales';
-import { colors, padding } from 'client/styles';
+import { colors, margin, padding } from 'client/styles';
 import { translator } from 'client/locales';
 import React from 'react';
 import Type from 'client/components/type';
@@ -18,19 +18,35 @@ const Container = styled.div`
   ${padding('large')}
 `;
 
+const Section = styled.div`
+  ${margin.bottom('medium')}
+`;
+
 const Home = ({ translate }: Props) => (
   <Container>
     <Type.heading>
       {translate('home.heading')}
     </Type.heading>
 
-    <Type.title>
-      {translate('home.whatIDo.title')}
-    </Type.title>
+    <Section>
+      <Type.title>
+        {translate('home.whatIDo.title')}
+      </Type.title>
 
-    <Type.paragraph raw>
-      {translate('home.whatIDo.description')}
-    </Type.paragraph>
+      <Type.paragraph raw>
+        {translate('home.whatIDo.description')}
+      </Type.paragraph>
+    </Section>
+
+    <Section>
+      <Type.title>
+        {translate('home.work.title')}
+      </Type.title>
+
+      <Type.paragraph raw>
+        {translate('home.work.description')}
+      </Type.paragraph>
+    </Section>
   </Container>
 );
 
