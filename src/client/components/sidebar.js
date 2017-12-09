@@ -3,8 +3,8 @@
 import type { Translate } from 'client/locales';
 import { colors, margin, media, padding, units } from 'client/styles';
 import { translator } from 'client/locales';
+import Image from 'client/components/image';
 import React from 'react';
-import RoundImage from 'client/components/round-image';
 import SocialNetworks from 'client/components/social-networks';
 import Type from 'client/components/type';
 import styled from 'styled-components';
@@ -66,7 +66,11 @@ const InfoContainer = styled.div`
 
 const Sidebar = ({ translate }: Props) => (
   <Container>
-    <RoundImage />
+    <Image
+      fileName={'ben.jpg'}
+      round
+      size={units(15)}
+    />
 
     <InfoContainer>
       <Type.heading>
