@@ -19,7 +19,9 @@ const Container = styled.div`
 `;
 
 const Section = styled.div`
-  ${margin.bottom('medium')}
+  &:not(:last-child) {
+    ${margin.bottom('medium')}
+  }
 `;
 
 const Home = ({ translate }: Props) => (

@@ -14,19 +14,19 @@ export type Spacing = {
 
 const large: Spacing = {
   base: units(5),
-  xs: units(10),
-  xxs: units(8),
+  sm: units(10),
+  xs: units(8),
 };
 
 const medium: Spacing = {
   base: units(2),
-  xs: units(5),
-  xxs: units(4),
+  sm: units(5),
+  xs: units(4),
 };
 
 const small: Spacing = {
   base: units(1),
-  xs: units(2),
+  sm: units(2),
 };
 
 const none: Spacing = {
