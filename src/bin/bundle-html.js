@@ -12,7 +12,6 @@ const writeFile = Bluebird.promisify(fs.writeFile);
 const html = `<!DOCTYPE html>${renderToString(renderClient())}`;
 
 writeFile('dist/index.html', html)
-  .then(() => console.log('done'))
   .catch(error => {
     console.log(error);
 
