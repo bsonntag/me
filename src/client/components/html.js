@@ -4,6 +4,7 @@ import type { Element } from 'react';
 import type { Translate } from 'client/locales';
 import { translator } from 'client/locales';
 import React from 'react';
+import config from 'config';
 
 type Props = {
   children: string,
@@ -37,10 +38,20 @@ const Html = ({ children, styles, translate }: Props) => (
       {styles}
     </head>
 
-    <body
-      // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={renderInnerHtml(children)}
-    />
+    <body>
+      <div
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={renderInnerHtml(children)}
+        id={'root'}
+      />
+
+      {config.get('javascriptEnabled') && (
+        <script
+          src={'/app.js'}
+          type={'text/javascript'}
+        />
+      )}
+    </body>
   </html>
 );
 
