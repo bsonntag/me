@@ -3,7 +3,7 @@
 import { injectGlobal } from 'styled-components';
 import normalize from 'styled-normalize';
 
-export const injectStyles = () => injectGlobal`
+export const injectGlobalStyles = () => injectGlobal`
   ${normalize}
 
   @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700');

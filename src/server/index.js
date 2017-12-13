@@ -26,7 +26,7 @@ if (config.get('javascriptEnabled')) {
 }
 
 app.get('*', (request, response) => {
-  const html = renderToString(renderClient());
+  const html = renderToString(renderClient(request.url));
 
   response.send(`<!DOCTYPE html>${html}`);
 });
