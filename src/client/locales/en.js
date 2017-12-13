@@ -29,4 +29,9 @@ export default {
     },
   },
   name,
+  notFound: {
+    go: 'You should probably go ',
+    home: 'home.',
+    title: 'How did you get here?',
+  },
 };

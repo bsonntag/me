@@ -1,7 +1,9 @@
 // @flow
 
-import { media } from 'client/styles';
-import Home from 'client/components/home';
+import { Route, Switch } from 'react-router-dom';
+import { colors, media, padding } from 'client/styles';
+import Home from 'client/components/pages/home';
+import NotFound from 'client/components/pages/not-found';
 import React from 'react';
 import Sidebar from 'client/components/sidebar';
 import styled from 'styled-components';
@@ -15,11 +17,28 @@ const Container = styled.div`
   `}
 `;
 
+const Content = styled.div`
+  color: ${colors.textColor};
+  flex: 1;
+
+  ${padding('large')}
+`;
+
 const App = () => (
   <Container>
     <Sidebar />
 
-    <Home />
+    <Content>
+      <Switch>
+        <Route
+          component={Home}
+          exact
+          path={'/'}
+        />
+
+        <Route component={NotFound} />
+      </Switch>
+    </Content>
   </Container>
 );
 
