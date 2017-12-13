@@ -35,6 +35,9 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^14.5.0",
+    "envify": "^4.1.0",
     "eslint": "^4.12.1",
     "eslint-config-seegno": "^10.0.0",
     "eslint-plugin-flowtype": "^2.39.1",
@@ -42,6 +45,8 @@
     "eslint-plugin-react": "^7.5.1",
     "flow-bin": "^0.60.1",
     "nodemon": "^1.12.5",
-    "sort-package-json": "^1.7.1"
+    "sort-package-json": "^1.7.1",
+    "uglifyify": "^4.0.5",
+    "watchify": "^3.9.0"
   }
 }
