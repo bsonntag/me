@@ -8,9 +8,10 @@
   "main": "./src/index.js",
   "repository": "https://github.com/bsonntag/bsonntag.github.io",
   "scripts": {
-    "bundle": "npm run bundle:cleanup && npm run bundle:html && npm run bundle:assets",
+    "bundle": "npm run bundle:cleanup && npm run bundle:html && npm run bundle:assets && npm run bundle:js",
     "bundle:assets": "cp src/assets/* dist/",
     "bundle:cleanup": "rm -rf dist/*",
+    "bundle:js": "babel-node src/bin/bundle-js.js",
     "bundle:html": "babel-node src/bin/bundle-html.js",
     "lint": "eslint src",
     "start": "nodemon --watch src --exec babel-node src/server/index.js"
