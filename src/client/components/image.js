@@ -14,10 +14,10 @@ type Props = {
 
 const assetPath = fileName => {
   if (isProduction()) {
-    return fileName;
+    return `/${fileName}`;
   }
 
-  return `assets/${fileName}`;
+  return `/assets/${fileName}`;
 };
 
 const Img = styled.img`
