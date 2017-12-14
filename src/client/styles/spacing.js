@@ -29,6 +29,10 @@ const small: Spacing = {
   sm: units(2),
 };
 
+const tiny: Spacing = {
+  base: units(0.5),
+};
+
 const none: Spacing = {
   base: 0,
 };
@@ -38,6 +42,7 @@ export const spacing = {
   medium,
   none,
   small,
+  tiny,
 };
 
 const createSpacing = (...keys) => (value: string | Spacing) => {
