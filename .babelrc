@@ -1,6 +1,7 @@
 {
   "plugins": [
-    ["module-resolver", { "root": ["./src"] }]
+    ["module-resolver", { "root": ["./src"] }],
+    ["babel-plugin-inline-import", { "extensions": [".md"] }]
   ],
   "presets": [
     "flow",

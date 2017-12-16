@@ -11,8 +11,8 @@
     "bundle": "npm run bundle:cleanup && npm run bundle:html && npm run bundle:assets && npm run bundle:js",
     "bundle:assets": "cp src/assets/* dist/",
     "bundle:cleanup": "rm -rf dist/*",
-    "bundle:js": "babel-node src/bin/bundle-js.js",
     "bundle:html": "babel-node src/bin/bundle-html.js",
+    "bundle:js": "babel-node src/bin/bundle-js.js",
     "lint": "eslint src",
     "start": "nodemon --watch src --exec babel-node src/server/index.js"
   },
@@ -33,6 +33,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
+    "babel-plugin-inline-import": "^2.0.6",
     "babel-plugin-module-resolver": "^3.0.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
