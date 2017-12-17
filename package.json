@@ -10,7 +10,7 @@
   "scripts": {
     "bundle": "npm run bundle:cleanup && npm run bundle:html && npm run bundle:assets && npm run bundle:js",
     "bundle:assets": "cp src/assets/* dist/",
-    "bundle:cleanup": "rm -rf dist/*",
+    "bundle:cleanup": "rm -rf dist/* && mkdir -p dist/blog",
     "bundle:html": "babel-node src/bin/bundle-html.js",
     "bundle:js": "babel-node src/bin/bundle-js.js",
     "lint": "eslint src",

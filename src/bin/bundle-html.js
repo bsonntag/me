@@ -2,6 +2,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-process-exit */
 
+import { getPostList } from 'blog';
 import { renderClient } from 'client';
 import { renderToString } from 'react-dom/server';
 import Bluebird from 'bluebird';
@@ -14,13 +15,26 @@ type Page = {
 
 const writeFile = Bluebird.promisify(fs.writeFile);
 
-const pages: Array<Page> = [{
-  fileName: 'index.html',
-  path: '/',
-}, {
-  fileName: '404.html',
-  path: '/404',
-}];
+const pages: Array<Page> = [
+  {
+    fileName: 'index.html',
+    path: '/',
+  },
+  {
+    fileName: '404.html',
+    path: '/404',
+  },
+  ...getPostList().reduce(
+    (result, { id, url }) => [
+      ...result,
+      {
+        fileName: `blog/${id}.html`,
+        path: url,
+      },
+    ],
+    []
+  ),
+];
 
 const renderPage = (page: Page) => {
   const html = `<!DOCTYPE html>${renderToString(renderClient(page.path))}`;
