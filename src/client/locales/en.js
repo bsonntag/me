@@ -5,6 +5,13 @@ import { externalLink } from './utils';
 const name = 'Benjamim Sonntag';
 
 export default {
+  footer: {
+    builtWith: 'Built with ',
+    copyright: '© 2017 ',
+    githubPages: 'GitHub Pages',
+    hostedOn: ' and hosted on ',
+    react: 'React',
+  },
   head: {
     title: name,
   },
