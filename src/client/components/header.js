@@ -1,6 +1,7 @@
 // @flow
 
 import type { Translate } from 'client/locales';
+import { UnstyledLink } from 'client/components/links';
 import { colors, margin, media, padding, units } from 'client/styles';
 import { translator } from 'client/locales';
 import Image from 'client/components/image';
@@ -13,7 +14,7 @@ type Props = {
   translate: Translate,
 };
 
-const Container = styled.div`
+const Container = styled.header`
   align-items: center;
   background-color: ${colors.primary};
   color: ${colors.alternateTextColor};
@@ -35,18 +36,6 @@ const Container = styled.div`
       ${margin.right('medium')}
     }
   `}
-
-  ${media.min.md`
-    flex-direction: column;
-    justify-content: flex-start;
-    min-height: 100vh;
-    width: ${units(50)};
-
-    > :not(:last-child) {
-      ${margin.bottom('medium')}
-      ${margin.right('none')}
-    }
-  `}
 `;
 
 const InfoContainer = styled.div`
@@ -58,13 +47,9 @@ const InfoContainer = styled.div`
   ${media.min.sm`
     align-items: flex-start;
   `}
-
-  ${media.min.md`
-    align-items: center;
-  `}
 `;
 
-const Sidebar = ({ translate }: Props) => (
+const Header = ({ translate }: Props) => (
   <Container>
     <Image
       fileName={'ben.jpg'}
@@ -74,7 +59,9 @@ const Sidebar = ({ translate }: Props) => (
 
     <InfoContainer>
       <Type.heading>
-        {translate('name')}
+        <UnstyledLink to={'/'}>
+          {translate('name')}
+        </UnstyledLink>
       </Type.heading>
 
       <SocialNetworks />
@@ -82,4 +69,4 @@ const Sidebar = ({ translate }: Props) => (
   </Container>
 );
 
-export default translator(Sidebar);
+export default translator(Header);

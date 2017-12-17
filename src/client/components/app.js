@@ -1,33 +1,25 @@
 // @flow
 
 import { Route, Switch } from 'react-router-dom';
-import { colors, media, padding } from 'client/styles';
+import { colors, padding } from 'client/styles';
 import BlogPost from 'client/components/pages/blog-post';
+import Header from 'client/components/header';
 import Home from 'client/components/pages/home';
 import NotFound from 'client/components/pages/not-found';
 import React from 'react';
-import Sidebar from 'client/components/sidebar';
 import styled from 'styled-components';
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  ${media.min.md`
-    flex-direction: row;
-  `}
-`;
-
-const Content = styled.div`
+const Content = styled.main`
   color: ${colors.textColor};
-  flex: 1;
+  margin: 0 auto;
+  max-width: 1200px;
 
   ${padding('large')}
 `;
 
 const App = () => (
-  <Container>
-    <Sidebar />
+  <div>
+    <Header />
 
     <Content>
       <Switch>
@@ -45,7 +37,7 @@ const App = () => (
         <Route component={NotFound} />
       </Switch>
     </Content>
-  </Container>
+  </div>
 );
 
 export default App;
