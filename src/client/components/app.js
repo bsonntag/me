@@ -2,6 +2,7 @@
 
 import { Route, Switch } from 'react-router-dom';
 import { colors, media, padding } from 'client/styles';
+import BlogPost from 'client/components/pages/blog-post';
 import Home from 'client/components/pages/home';
 import NotFound from 'client/components/pages/not-found';
 import React from 'react';
@@ -30,6 +31,11 @@ const App = () => (
 
     <Content>
       <Switch>
+        <Route
+          component={BlogPost}
+          path={'/blog/:postId'}
+        />
+
         <Route
           component={Home}
           exact
