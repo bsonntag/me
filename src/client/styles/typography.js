@@ -46,6 +46,14 @@ const paragraph: TypeConfig = {
   lineHeight: 24,
 };
 
+const caption: TypeConfig = {
+  element: 'span',
+  fontFamily: `'Open Sans', sans-serif`,
+  fontSize: 14,
+  fontWeight: 'normal',
+  lineHeight: 20,
+};
+
 export const createTypeStyle = ({
   fontFamily,
   fontSize,
@@ -62,6 +70,7 @@ export const createTypeStyle = ({
 `;
 
 export const typography = {
+  caption,
   heading,
   paragraph,
   subheading,
