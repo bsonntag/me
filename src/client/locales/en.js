@@ -9,6 +9,9 @@ export default {
     title: name,
   },
   home: {
+    blog: {
+      title: 'Blog',
+    },
     heading: `Hello, I'm ${name}, a web developer`,
     whatIDo: {
       description: `
