@@ -1,7 +1,7 @@
 // @flow
 
+import { getAssetUrl } from 'common/utils';
 import { ifProp, prop } from 'styled-tools';
-import { isProduction } from 'common/utils';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -10,14 +10,6 @@ type Props = {
   fileName: string,
   round?: boolean,
   size: string,
-};
-
-const assetPath = fileName => {
-  if (isProduction()) {
-    return `/${fileName}`;
-  }
-
-  return `/assets/${fileName}`;
 };
 
 const Img = styled.img`
@@ -29,7 +21,7 @@ const Img = styled.img`
 
 const Image = ({ fileName, ...rest }: Props) => (
   <Img
-    src={assetPath(fileName)}
+    src={getAssetUrl(fileName)}
     {...rest}
   />
 );
