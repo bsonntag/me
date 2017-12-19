@@ -12,9 +12,6 @@ export default {
     hostedOn: ' and hosted on ',
     react: 'React',
   },
-  head: {
-    title: name,
-  },
   home: {
     blog: {
       title: 'Blog',
@@ -37,6 +34,12 @@ export default {
       `,
       title: 'Work',
     },
+  },
+  meta: {
+    description: `The personal webpage of ${name}.`,
+    siteName: 'bsonntag.me',
+    title: name,
+    twitterHandle: '@benjamimsonntag',
   },
   name,
   notFound: {
