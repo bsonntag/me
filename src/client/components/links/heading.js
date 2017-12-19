@@ -11,7 +11,7 @@ type Props = {
   href: string,
 };
 
-const Anchor = styled.a`
+const AnchorContainer = styled.aside`
   align-items: center;
   bottom: 0;
   display: flex;
@@ -19,7 +19,7 @@ const Anchor = styled.a`
   padding-right: ${units(1)};
   position: absolute;
   left: ${units(-2.5)};
-  top: 0;
+  top: 6px;
   visibility: hidden;
 
   &:hover {
@@ -30,16 +30,26 @@ const Anchor = styled.a`
 const Container = styled.div`
   position: relative;
 
-  &:hover > ${Anchor} {
+  &:hover > ${AnchorContainer} {
     visibility: visible;
   }
 `;
 
+/**
+ * `HeadingLink` component.
+ *
+ * The icon is inside a div so that it doesn't appear on Firefox's reader view.
+ */
+
 export const HeadingLink = ({ children, href }: Props) => (
   <Container>
-    <Anchor href={href}>
-      <Icon.link size={units(2)} />
-    </Anchor>
+    <AnchorContainer aria-hidden>
+      <a href={href}>
+        <div>
+          <Icon.link size={units(2)} />
+        </div>
+      </a>
+    </AnchorContainer>
 
     {children}
   </Container>
