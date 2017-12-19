@@ -1,2 +1,4 @@
 
-module.exports = {};
+module.exports = {
+  baseUrl: 'http://bsonntag.me',
+};
