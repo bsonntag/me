@@ -47,4 +47,5 @@ export default {
     home: 'home.',
     title: 'How did you get here?',
   },
+  share: 'Share this on:',
 };
