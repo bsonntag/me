@@ -15,6 +15,7 @@ const white = '#ffffff';
 export const colors = {
   alternateTextColor: white,
   black,
+  facebookBlue: '#3b5998',
   linkedInBlue: '#0077b5',
   primary: '#424242',
   primaryDark: '#1b1b1b',
