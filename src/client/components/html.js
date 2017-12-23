@@ -1,14 +1,17 @@
 // @flow
 
+import type { Config } from 'common/types';
 import type { Element } from 'react';
 import type { Translate } from 'client/locales';
 import { getAssetUrl } from 'common/utils';
 import { translator } from 'client/locales';
 import React from 'react';
-import config from 'config';
 
 type Props = {
+  baseUrl: string,
   children: string,
+  clientConfig: Config,
+  javascriptEnabled: boolean,
   styles: Array<Element<*>>,
   translate: Translate,
 };
@@ -17,7 +20,26 @@ const renderInnerHtml = html => ({
   __html: html, // eslint-disable-line id-match
 });
 
-const Html = ({ children, styles, translate }: Props) => (
+const renderConfig = (clientConfig: Config) => {
+  const innerHtml = `window._config = ${JSON.stringify(clientConfig)};`;
+
+  return (
+    <script
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={renderInnerHtml(innerHtml)}
+      type={'text/javascript'}
+    />
+  );
+};
+
+const Html = ({
+  baseUrl,
+  children,
+  clientConfig,
+  javascriptEnabled,
+  styles,
+  translate,
+}: Props) => (
   <html>
     <head>
       <meta charSet={'utf-8'} />
@@ -37,7 +59,7 @@ const Html = ({ children, styles, translate }: Props) => (
       </title>
 
       <meta
-        content={config.get('baseUrl')}
+        content={baseUrl}
         property={'og:url'}
       />
 
@@ -52,7 +74,7 @@ const Html = ({ children, styles, translate }: Props) => (
       />
 
       <meta
-        content={config.get('baseUrl') + getAssetUrl('ben.jpn')}
+        content={baseUrl + getAssetUrl('ben.jpn')}
         property={'og:image'}
       />
 
@@ -71,7 +93,9 @@ const Html = ({ children, styles, translate }: Props) => (
         id={'root'}
       />
 
-      {config.get('javascriptEnabled') && (
+      {javascriptEnabled && renderConfig(clientConfig)}
+
+      {javascriptEnabled && (
         <script
           src={'/app.js'}
           type={'text/javascript'}
