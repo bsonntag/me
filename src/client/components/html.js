@@ -2,6 +2,7 @@
 
 import type { Config } from 'common/types';
 import type { Element } from 'react';
+import type { StaticHelmet } from 'client/types';
 import type { Translate } from 'client/locales';
 import { getAssetUrl } from 'common/utils';
 import { translator } from 'client/locales';
@@ -11,6 +12,7 @@ type Props = {
   baseUrl: string,
   children: string,
   clientConfig: Config,
+  helmet: StaticHelmet,
   javascriptEnabled: boolean,
   styles: Array<Element<*>>,
   translate: Translate,
@@ -36,11 +38,12 @@ const Html = ({
   baseUrl,
   children,
   clientConfig,
+  helmet,
   javascriptEnabled,
   styles,
   translate,
 }: Props) => (
-  <html>
+  <html {...helmet.htmlAttributes.toComponent()}>
     <head>
       <meta charSet={'utf-8'} />
 
@@ -49,28 +52,11 @@ const Html = ({
         name={'viewport'}
       />
 
+      {helmet.title.toComponent()}
+
       <meta
         content={'#000000'}
         name={'theme-color'}
-      />
-
-      <title>
-        {translate('meta.title')}
-      </title>
-
-      <meta
-        content={baseUrl}
-        property={'og:url'}
-      />
-
-      <meta
-        content={translate('meta.siteName')}
-        property={'og:site_name'}
-      />
-
-      <meta
-        content={translate('meta.description')}
-        property={'og:description'}
       />
 
       <meta
@@ -83,10 +69,18 @@ const Html = ({
         name={'twitter:creator'}
       />
 
+      {helmet.meta.toComponent()}
+
+      {helmet.link.toComponent()}
+
+      {helmet.script.toComponent()}
+
+      {helmet.style.toComponent()}
+
       {styles}
     </head>
 
-    <body>
+    <body {...helmet.bodyAttributes.toComponent()}>
       <div
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={renderInnerHtml(children)}

@@ -1,5 +1,6 @@
 // @flow
 
+export * from './helmet';
 export * from './router';
 
 import type { ComponentType } from 'react';

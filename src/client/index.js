@@ -1,5 +1,6 @@
 // @flow
 
+import { Helmet } from 'react-helmet';
 import { ServerStyleSheet } from 'styled-components';
 import { StaticRouter } from 'react-router-dom';
 import { injectGlobalStyles } from './styles';
@@ -38,6 +39,7 @@ export const renderClient = (location: string) => {
     <Html
       baseUrl={config.get('baseUrl')}
       clientConfig={getClientConfig()}
+      helmet={Helmet.renderStatic()}
       javascriptEnabled={config.get('javascriptEnabled')}
       styles={styleSheet.getStyleElement()}
     >

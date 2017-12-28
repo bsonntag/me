@@ -1,8 +1,10 @@
 // @flow
 
 import type { Config } from 'common/types';
+import { Helmet } from 'react-helmet';
 import type { Post } from 'blog';
 import type { RouteProps } from 'client/types';
+import { compose, head, replace, split, trim } from 'lodash/fp';
 import { getBlogPost } from 'blog';
 import { margin } from 'client/styles';
 import { renderDate } from 'client/utils';
@@ -20,6 +22,13 @@ type Props = {
   config: Config,
 } & RouteProps;
 
+const getFirstParagraph = compose(
+  trim,
+  replace('\n', ' '),
+  head,
+  split('\n\n')
+);
+
 const Title = styled(Type.heading)`
   ${margin.bottom('none')}
 `;
@@ -34,6 +43,17 @@ const BlogPost = ({ config, location, match }: Props) => {
 
   return (
     <article>
+      <Helmet>
+        <title>
+          {title}
+        </title>
+
+        <meta
+          content={getFirstParagraph(content)}
+          property={'og:description'}
+        />
+      </Helmet>
+
       <Title>
         {title}
       </Title>
