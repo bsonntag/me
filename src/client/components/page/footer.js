@@ -12,6 +12,8 @@ type Props = {
   translate: Translate,
 };
 
+const renderCopyright = () => `© ${new Date().getFullYear()} `;
+
 const Container = styled.footer`
   color: ${colors.textColor};
   margin: 0 auto;
@@ -37,7 +39,7 @@ const Footer = ({ translate }: Props) => (
   <Container>
     <Content>
       <Type.caption>
-        {translate('footer.copyright')}
+        {renderCopyright()}
 
         <Link to={'/'}>
           {translate('name')}
