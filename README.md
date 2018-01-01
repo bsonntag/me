@@ -21,10 +21,9 @@ It will run on port 3000, so you can access it on http://localhost:3000.
 ## Deployment
 
 To deploy the website I run `NODE_ENV=production yarn bundle`,
-which will bundle the html and assets into a dist folder.
+which will bundle the html and assets into the dist folder.
 
-This folder is also a git repository which holds the `gh-pages` branch
-of this repository (which I use as a staging server) and the `master` branch of
+This folder is also a git repository which is a clone of
 [bsonntag/bsonntag.github.io](https://github.com/bsonntag/bsonntag.github.io),
 where my website is hosted.
 
