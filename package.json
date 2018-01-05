@@ -21,6 +21,7 @@
     "color": "^2.0.1",
     "config": "^1.28.1",
     "express": "^4.16.2",
+    "iframe-resizer": "^3.5.15",
     "morgan": "^1.9.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
