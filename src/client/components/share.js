@@ -10,6 +10,7 @@ import Type from 'client/components/type';
 import styled from 'styled-components';
 
 type Props = {
+  className?: string,
   translate: Translate,
   url: string,
 };
@@ -21,9 +22,6 @@ const twitterUrl = url => `https://twitter.com/home?status=${url}`;
 const Container = styled.div`
   align-items: center;
   display: flex;
-  justify-content: flex-end;
-
-  ${margin.top('large')}
 
   > :not(:last-child) {
     ${margin.right('small')}
@@ -38,8 +36,8 @@ const ScallingLink = styled(ExternalLink)`
   }
 `;
 
-const Share = ({ translate, url }: Props) => (
-  <Container>
+const Share = ({ className, translate, url }: Props) => (
+  <Container className={className}>
     <Type.caption>
       {translate('share')}
     </Type.caption>
