@@ -22,7 +22,7 @@ class Remarkbox extends Component<Props> {
   getUrl(): string {
     const { remarkboxKey, threadUri } = this.props;
 
-    return `https://my.remarkbox.com/embed?rb_owner_key=${remarkboxKey}&thread_uri=${threadUri}`;
+    return `https://my.remarkbox.com/embed?rb_owner_key=${remarkboxKey}&thread_uri=${encodeURIComponent(threadUri)}`;
   }
 
   componentDidMount() {

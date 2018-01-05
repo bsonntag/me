@@ -24,7 +24,7 @@ const CommentBox = ({ config, location }: Props) => (
   <StyledRemarkbox
     remarkboxKey={config.get('remarkbox.key')}
     threadFragment={location.hash}
-    threadUri={location.href}
+    threadUri={config.get('baseUrl') + location.pathname}
   />
 );
 
