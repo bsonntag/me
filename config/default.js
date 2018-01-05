@@ -5,4 +5,7 @@ module.exports = {
   private: [
     'javascriptEnabled',
   ],
+  remarkbox: {
+    key: null,
+  },
 };
