@@ -16,21 +16,22 @@ app.use(morgan('tiny'));
 
 app.use('/assets', express.static('src/assets'));
 
-if (config.get('javascriptEnabled')) {
-  app.get('/app.js', (request, response) => {
-    response.setHeader('content-type', 'application/javascript');
+bundleApplication()
+  .then(bundle => {
+    if (config.get('javascriptEnabled')) {
+      app.get('/app.js', (request, response) => {
+        response.setHeader('content-type', 'application/javascript');
+        response.end(bundle);
+      });
+    }
 
-    bundleApplication()
-      .pipe(response);
+    app.get('*', (request, response) => {
+      const html = renderToString(renderClient(request.url));
+
+      response.send(`<!DOCTYPE html>${html}`);
+    });
+
+    app.listen(port, () => {
+      console.log(`Server running on port ${port}`);
+    });
   });
-}
-
-app.get('*', (request, response) => {
-  const html = renderToString(renderClient(request.url));
-
-  response.send(`<!DOCTYPE html>${html}`);
-});
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
