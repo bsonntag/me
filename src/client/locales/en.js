@@ -5,6 +5,11 @@ import { externalLink } from './utils';
 const name = 'Benjamim Sonntag';
 
 export default {
+  blogPost: {
+    comments: {
+      title: 'Comments',
+    },
+  },
   footer: {
     builtWith: 'Built with ',
     githubPages: 'GitHub Pages',
