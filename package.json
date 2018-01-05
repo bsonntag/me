@@ -54,7 +54,6 @@
     "flow-bin": "^0.60.1",
     "nodemon": "^1.12.5",
     "sort-package-json": "^1.7.1",
-    "uglifyify": "^4.0.5",
-    "watchify": "^3.9.0"
+    "uglifyify": "^4.0.5"
   }
 }
