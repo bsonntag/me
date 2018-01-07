@@ -1,17 +1,13 @@
 // @flow
 
-import type { Translate } from 'client/locales';
+import type { TranslateProps } from 'client/types';
 import { getPostList } from 'blog';
 import { margin } from 'client/styles';
-import { translator } from 'client/locales';
 import Blog from './blog';
 import React from 'react';
 import Type from 'client/components/type';
 import styled from 'styled-components';
-
-type Props = {
-  translate: Translate,
-};
+import translator from 'client/hocs/translator';
 
 const Section = styled.div`
   &:not(:last-child) {
@@ -19,7 +15,7 @@ const Section = styled.div`
   }
 `;
 
-const Home = ({ translate }: Props) => (
+const Home = ({ translate }: TranslateProps) => (
   <div>
     <Type.heading>
       {translate('home.heading')}

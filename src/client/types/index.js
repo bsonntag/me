@@ -2,6 +2,7 @@
 
 export * from './helmet';
 export * from './router';
+export * from './translate';
 
 import type { ComponentType } from 'react';
 

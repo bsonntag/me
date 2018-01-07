@@ -3,13 +3,13 @@
 import { Helmet } from 'react-helmet';
 import { Route, Switch } from 'react-router-dom';
 import { ScrollRestoration } from 'client/components/routing';
-import type { TranslateProps } from 'client/locales';
-import { translator } from 'client/locales';
+import type { TranslateProps } from 'client/types';
 import BlogPost from 'client/components/pages/blog-post';
 import Home from 'client/components/pages/home';
 import NotFound from 'client/components/pages/not-found';
 import Page from 'client/components/page';
 import React from 'react';
+import translator from 'client/hocs/translator';
 
 const titleTemplatePrefix = '%s - ';
 

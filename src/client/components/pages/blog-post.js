@@ -3,20 +3,19 @@
 import type { Config } from 'common/types';
 import { Helmet } from 'react-helmet';
 import type { Post } from 'blog';
-import type { RouteProps } from 'client/types';
-import type { TranslateProps } from 'client/locales';
+import type { RouteProps, TranslateProps } from 'client/types';
 import { compose, head, replace, split, trim } from 'lodash/fp';
 import { getBlogPost } from 'blog';
 import { ifProp } from 'styled-tools';
 import { margin } from 'client/styles';
 import { renderDate } from 'client/utils';
-import { translator } from 'client/locales';
 import CommentBox from 'client/components/comment-box';
 import Markdown from 'client/components/markdown';
 import React from 'react';
 import Share from 'client/components/share';
 import Type from 'client/components/type';
 import styled, { css } from 'styled-components';
+import translator from 'client/hocs/translator';
 import withConfig from 'client/hocs/with-config';
 
 type Props = {

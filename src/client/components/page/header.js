@@ -1,18 +1,14 @@
 // @flow
 
-import type { Translate } from 'client/locales';
+import type { TranslateProps } from 'client/types';
 import { UnstyledLink } from 'client/components/links';
 import { colors, margin, media, padding, units } from 'client/styles';
-import { translator } from 'client/locales';
 import Image from 'client/components/image';
 import React from 'react';
 import SocialNetworks from 'client/components/social-networks';
 import Type from 'client/components/type';
 import styled from 'styled-components';
-
-type Props = {
-  translate: Translate,
-};
+import translator from 'client/hocs/translator';
 
 const Container = styled.header`
   align-items: center;
@@ -49,7 +45,7 @@ const InfoContainer = styled.div`
   `}
 `;
 
-const Header = ({ translate }: Props) => (
+const Header = ({ translate }: TranslateProps) => (
   <Container>
     <Image
       fileName={'ben.jpg'}

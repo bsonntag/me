@@ -2,11 +2,10 @@
 
 import type { Config } from 'common/types';
 import type { Element } from 'react';
-import type { StaticHelmet } from 'client/types';
-import type { Translate } from 'client/locales';
+import type { StaticHelmet, Translate } from 'client/types';
 import { getAssetUrl } from 'common/utils';
-import { translator } from 'client/locales';
 import React from 'react';
+import translator from 'client/hocs/translator';
 
 type Props = {
   baseUrl: string,

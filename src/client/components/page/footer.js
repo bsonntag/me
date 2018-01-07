@@ -1,16 +1,12 @@
 // @flow
 
 import { ExternalLink, Link } from 'client/components/links';
-import type { Translate } from 'client/locales';
+import type { TranslateProps } from 'client/types';
 import { colors, margin, padding } from 'client/styles';
-import { translator } from 'client/locales';
 import React from 'react';
 import Type from 'client/components/type';
 import styled from 'styled-components';
-
-type Props = {
-  translate: Translate,
-};
+import translator from 'client/hocs/translator';
 
 const renderCopyright = () => `© ${new Date().getFullYear()} `;
 
@@ -35,7 +31,7 @@ const Content = styled.div`
   }
 `;
 
-const Footer = ({ translate }: Props) => (
+const Footer = ({ translate }: TranslateProps) => (
   <Container>
     <Content>
       <Type.caption>

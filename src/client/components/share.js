@@ -1,13 +1,13 @@
 // @flow
 
 import { ExternalLink } from 'client/components/links';
-import type { Translate } from 'client/locales';
+import type { Translate } from 'client/types';
 import { margin, units } from 'client/styles';
-import { translator } from 'client/locales';
 import Icon from 'client/components/icon';
 import React from 'react';
 import Type from 'client/components/type';
 import styled from 'styled-components';
+import translator from 'client/hocs/translator';
 
 type Props = {
   className?: string,
