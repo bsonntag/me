@@ -5,7 +5,7 @@ import type { RouteProps } from 'client/types';
 import { compose } from 'recompose';
 import { withRouter } from 'react-router-dom';
 import React from 'react';
-import Remarkbox from './remarkbox';
+import Remarkbox from 'react-remarkbox';
 import styled from 'styled-components';
 import withConfig from 'client/hocs/with-config';
 
