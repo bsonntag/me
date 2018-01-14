@@ -1,6 +1,7 @@
 // @flow
 
 export * from './helmet';
+export * from './projects';
 export * from './router';
 export * from './translate';
 

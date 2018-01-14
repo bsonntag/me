@@ -22,6 +22,27 @@ export default {
       title: 'Blog',
     },
     heading: `Hello, I'm ${name}, a web developer`,
+    projects: {
+      items: {
+        badgeUpCli: {
+          description: 'Create badges from the terminal.',
+        },
+        me: {
+          description: 'My personal website (this one).',
+        },
+        npmNotifier: {
+          description: 'Desktop application for receiving notifications when new versions are released for your favourite modules.',
+        },
+        reactRemarkbox: {
+          description: 'React component for Remarkbox.',
+        },
+        stopMediaStream: {
+          description: 'Little module to stop and remove all tracks in a MediaStream.',
+        },
+      },
+      title: 'Personal Projects & Modules',
+      wip: '(Work in progress)',
+    },
     whatIDo: {
       description: `
         I mostly do frontend work using React and Redux, but I also do some

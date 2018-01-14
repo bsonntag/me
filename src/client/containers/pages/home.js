@@ -4,8 +4,10 @@ import type { TranslateProps } from 'client/types';
 import { getPostList } from 'blog';
 import { margin } from 'client/styles';
 import Blog from 'client/components/home/blog';
+import Projects from 'client/components/home/projects';
 import React from 'react';
 import Type from 'client/components/type';
+import entities from 'client/entities';
 import styled from 'styled-components';
 import translator from 'client/hocs/translator';
 
@@ -39,6 +41,14 @@ const Home = ({ translate }: TranslateProps) => (
       <Type.paragraph raw>
         {translate('home.work.description')}
       </Type.paragraph>
+    </Section>
+
+    <Section>
+      <Type.title>
+        {translate('home.projects.title')}
+      </Type.title>
+
+      <Projects projects={entities.projects} />
     </Section>
 
     <Section>
