@@ -34,6 +34,8 @@ export default {
       description: `
         I'm currently working at ${externalLink('Seegno', 'https://seegno.com')}
         doing some awesome stuff.
+        Before that, I helped ${externalLink('siosLIFE', 'http://sioslife.com/')}
+        bring technology to the elderly.
       `,
       title: 'Work',
     },
