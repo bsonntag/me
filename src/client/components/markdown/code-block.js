@@ -1,6 +1,14 @@
 // @flow
 
-import { colors, margin, padding } from 'client/styles';
+import {
+  codeFontFamily,
+  codeStyle,
+  colors,
+  margin,
+  padding,
+} from 'client/styles';
+
+import Prism from 'client/utils/prism';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -10,9 +18,10 @@ type Props = {
 };
 
 const Pre = styled.pre`
-  background-color: ${colors.secondaryLight};
+  background-color: ${colors.primary};
   border-radius: 4px;
-  font-family: 'Source Code Pro', monospace;
+  color: ${colors.white};
+  font-family: ${codeFontFamily};
   max-width: 100%;
   overflow-x: auto;
 
@@ -21,14 +30,22 @@ const Pre = styled.pre`
 `;
 
 const Code = styled.code`
-  font-family: 'Source Code Pro', monospace;
+  ${codeStyle}
 `;
+
+const renderInnerHtml = html => ({
+  __html: html, // eslint-disable-line id-match
+});
+
+const renderCode = code => {
+  const html = Prism.highlight(code, Prism.languages.jsx);
+
+  return renderInnerHtml(html);
+};
 
 const CodeBlock = ({ value }: Props) => (
   <Pre>
-    <Code>
-      {value}
-    </Code>
+    <Code dangerouslySetInnerHTML={renderCode(value)} />
   </Pre>
 );
 
