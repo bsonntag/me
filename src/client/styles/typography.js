@@ -47,7 +47,7 @@ const paragraph: TypeConfig = {
 };
 
 const caption: TypeConfig = {
-  element: 'span',
+  element: 'small',
   fontFamily: `'Open Sans', sans-serif`,
   fontSize: 14,
   fontWeight: 'normal',
