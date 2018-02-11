@@ -4,7 +4,11 @@ import { createStep, exec } from 'bin/utils';
 import semver from 'semver';
 
 // Executes: npm version <version>
-const updatePackageVersion = tag => exec('npm', ['version', semver.valid(tag)]);
+const updatePackageVersion = tag => exec('npm', [
+  'version',
+  semver.valid(tag),
+  '--no-git-tag-version',
+]);
 
 // Executes on dist: git add package.json
 const addPackageJson = () => exec('git', ['add', 'package.json']);
