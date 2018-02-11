@@ -8,7 +8,7 @@ import {
   padding,
 } from 'client/styles';
 
-import Prism from 'client/utils/prism';
+import { highlightCode } from 'client/utils/code';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -37,15 +37,9 @@ const renderInnerHtml = html => ({
   __html: html, // eslint-disable-line id-match
 });
 
-const renderCode = code => {
-  const html = Prism.highlight(code, Prism.languages.jsx);
-
-  return renderInnerHtml(html);
-};
-
-const CodeBlock = ({ value }: Props) => (
+const CodeBlock = ({ language, value }: Props) => (
   <Pre>
-    <Code dangerouslySetInnerHTML={renderCode(value)} />
+    <Code dangerouslySetInnerHTML={renderInnerHtml(highlightCode(value, language))} />
   </Pre>
 );
 
