@@ -38,7 +38,7 @@ but in fact they aren't used like functions.
 
 Consider the following component:
 
-```js
+```jsx
 const Welcome = ({ name }) => (
   <h1>
     Hello, {props.name}!
@@ -48,7 +48,7 @@ const Welcome = ({ name }) => (
 
 It looks like a normal JavaScript function, but how do we use it? That's right:
 
-```js
+```jsx
 <Welcome name={'John Doe'} />
 ```
 
@@ -183,7 +183,7 @@ Our function-like components are specially useful when rendering lists.
 
 Consider the eternal example of a To-do application:
 
-```js
+```jsx
 const Todo = ({ description }) => (
   <li>
     {description}
@@ -290,7 +290,7 @@ compose(dom.section, dom.div)
 This isn't particularly useful for HTML tags, but it's common for
 the root component of an application to have many nested components.
 
-```js
+```jsx
 const App = () => (
   <ReduxProvider store={store}>
     <I18nextProvider i18n={i18n}>
@@ -328,7 +328,7 @@ because I needed to pass props to `ReduxProvider`, `I18nextProvider` and `MuiThe
 
 Lets put our components side by side with their JSX equivalents so that we can compare them.
 
-```js
+```jsx
 import { compose, get, map } from 'lodash/fp';
 
 // Todo component
