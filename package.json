@@ -28,7 +28,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-helmet": "^5.2.0",
-    "react-markdown": "^3.1.2",
+    "react-markdown": "^3.1.5",
     "react-remarkbox": "^0.0.1",
     "react-router-dom": "^4.2.2",
     "recompose": "^0.26.0",
