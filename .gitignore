@@ -1,3 +1,6 @@
+.cache
+.env
+build
 config/local.js
 dist
 node_modules
