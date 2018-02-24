@@ -7,6 +7,7 @@ import Image from 'client/components/image';
 import React from 'react';
 import SocialNetworks from 'client/components/social-networks';
 import Type from 'client/components/type';
+import ben from 'assets/ben.jpg';
 import styled from 'styled-components';
 import translator from 'client/hocs/translator';
 
@@ -48,9 +49,9 @@ const InfoContainer = styled.div`
 const Header = ({ translate }: TranslateProps) => (
   <Container>
     <Image
-      fileName={'ben.jpg'}
       round
       size={units(15)}
+      src={ben}
     />
 
     <InfoContainer>
