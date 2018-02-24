@@ -2,7 +2,7 @@
 
 import { BrowserRouter } from 'react-router-dom';
 import { injectGlobalStyles } from './styles';
-import App from './components/app';
+import App from './containers/app';
 import React from 'react';
 import ReactDom from 'react-dom';
 import config from 'common/config';

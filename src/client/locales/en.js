@@ -9,6 +9,7 @@ export default {
     comments: {
       title: 'Comments',
     },
+    share: 'Share this on:',
   },
   footer: {
     builtWith: 'Built with ',
@@ -51,5 +52,4 @@ export default {
     home: 'home.',
     title: 'How did you get here?',
   },
-  share: 'Share this on:',
 };

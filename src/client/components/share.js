@@ -1,17 +1,15 @@
 // @flow
 
 import { ExternalLink } from 'client/components/links';
-import type { Translate } from 'client/types';
 import { margin, units } from 'client/styles';
 import Icon from 'client/components/icon';
 import React from 'react';
 import Type from 'client/components/type';
 import styled from 'styled-components';
-import translator from 'client/hocs/translator';
 
 type Props = {
   className?: string,
-  translate: Translate,
+  label: string,
   url: string,
 };
 
@@ -36,10 +34,10 @@ const ScallingLink = styled(ExternalLink)`
   }
 `;
 
-const Share = ({ className, translate, url }: Props) => (
+const Share = ({ className, label, url }: Props) => (
   <Container className={className}>
     <Type.caption>
-      {translate('share')}
+      {label}
     </Type.caption>
 
     <ScallingLink href={facebookUrl(url)}>
@@ -52,4 +50,4 @@ const Share = ({ className, translate, url }: Props) => (
   </Container>
 );
 
-export default translator(Share);
+export default Share;

@@ -86,6 +86,7 @@ const BlogPost = ({ location, match, translate }: Props) => {
 
       <StyledShare
         hasCommentSection={hasCommentSection}
+        label={translate('blogPost.share')}
         url={config.baseUrl + location.pathname}
       />
 

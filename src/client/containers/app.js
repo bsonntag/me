@@ -1,14 +1,11 @@
 // @flow
 
 import { Helmet } from 'react-helmet';
-import { Route, Switch } from 'react-router-dom';
 import { ScrollRestoration } from 'client/components/routing';
 import type { TranslateProps } from 'client/types';
-import BlogPost from 'client/components/pages/blog-post';
-import Home from 'client/components/pages/home';
-import NotFound from 'client/components/pages/not-found';
-import Page from 'client/components/page';
+import Page from 'client/containers/page';
 import React from 'react';
+import Routes from 'client/containers/routes';
 import translator from 'client/hocs/translator';
 
 const titleTemplatePrefix = '%s - ';
@@ -32,20 +29,7 @@ const App = ({ translate }: TranslateProps) => (
 
     <ScrollRestoration />
 
-    <Switch>
-      <Route
-        component={BlogPost}
-        path={'/blog/:postId'}
-      />
-
-      <Route
-        component={Home}
-        exact
-        path={'/'}
-      />
-
-      <Route component={NotFound} />
-    </Switch>
+    <Routes />
   </Page>
 );
 

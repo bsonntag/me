@@ -3,7 +3,7 @@
 import type { TranslateProps } from 'client/types';
 import { getPostList } from 'blog';
 import { margin } from 'client/styles';
-import Blog from './blog';
+import Blog from 'client/components/home/blog';
 import React from 'react';
 import Type from 'client/components/type';
 import styled from 'styled-components';

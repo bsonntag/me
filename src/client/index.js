@@ -5,8 +5,8 @@ import { ServerStyleSheet } from 'styled-components';
 import { StaticRouter } from 'react-router-dom';
 import { injectGlobalStyles } from './styles';
 import { renderToString } from 'react-dom/server';
-import App from './components/app';
-import Html from './components/html';
+import App from './containers/app';
+import Html from './containers/html';
 import React from 'react';
 
 export const renderClient = (location: string) => {
