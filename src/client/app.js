@@ -1,23 +1,25 @@
 // @flow
 
 import { BrowserRouter } from 'react-router-dom';
-// $FlowFixMe
-import { hydrate } from 'react-dom';
+import { injectGlobalStyles } from './styles';
 import App from './components/app';
-import ConfigProvider from './components/config-provider';
 import React from 'react';
-import config from './config';
+import ReactDom from 'react-dom';
+import config from 'common/config';
+
+// $FlowFixMe
+const render = config.ssr ? ReactDom.hydrate : ReactDom.render;
 
 const renderApplication = () => (
-  <ConfigProvider config={config}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </ConfigProvider>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
 );
 
 const root = document.getElementById('root');
 
 if (root) {
-  hydrate(renderApplication(), root);
+  injectGlobalStyles();
+
+  render(renderApplication(), root);
 }

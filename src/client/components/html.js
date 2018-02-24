@@ -1,18 +1,16 @@
 // @flow
 
-import type { Config } from 'common/types';
 import type { Element } from 'react';
 import type { StaticHelmet, Translate } from 'client/types';
-import { getAssetUrl } from 'common/utils';
+import { resolve } from 'url';
 import React from 'react';
+import ben from 'assets/ben.jpg';
+import config from 'common/config';
 import translator from 'client/hocs/translator';
 
 type Props = {
-  baseUrl: string,
   children: string,
-  clientConfig: Config,
   helmet: StaticHelmet,
-  javascriptEnabled: boolean,
   styles: Array<Element<*>>,
   translate: Translate,
 };
@@ -21,27 +19,7 @@ const renderInnerHtml = html => ({
   __html: html, // eslint-disable-line id-match
 });
 
-const renderConfig = (clientConfig: Config) => {
-  const innerHtml = `window._config = ${JSON.stringify(clientConfig)};`;
-
-  return (
-    <script
-      // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={renderInnerHtml(innerHtml)}
-      type={'text/javascript'}
-    />
-  );
-};
-
-const Html = ({
-  baseUrl,
-  children,
-  clientConfig,
-  helmet,
-  javascriptEnabled,
-  styles,
-  translate,
-}: Props) => (
+const Html = ({ children, helmet, styles, translate }: Props) => (
   <html {...helmet.htmlAttributes.toComponent()}>
     <head>
       <meta charSet={'utf-8'} />
@@ -59,7 +37,7 @@ const Html = ({
       />
 
       <meta
-        content={baseUrl + getAssetUrl('ben.jpn')}
+        content={resolve(config.baseUrl, ben)}
         property={'og:image'}
       />
 
@@ -86,14 +64,10 @@ const Html = ({
         id={'root'}
       />
 
-      {javascriptEnabled && renderConfig(clientConfig)}
-
-      {javascriptEnabled && (
-        <script
-          src={'/app.js'}
-          type={'text/javascript'}
-        />
-      )}
+      <script
+        src={'/static/app.js'}
+        type={'text/javascript'}
+      />
     </body>
   </html>
 );

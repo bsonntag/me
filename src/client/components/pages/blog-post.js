@@ -1,6 +1,5 @@
 // @flow
 
-import type { Config } from 'common/types';
 import { Helmet } from 'react-helmet';
 import type { Post } from 'blog';
 import type { RouteProps, TranslateProps } from 'client/types';
@@ -14,15 +13,14 @@ import Markdown from 'client/components/markdown';
 import React from 'react';
 import Share from 'client/components/share';
 import Type from 'client/components/type';
+import config from 'common/config';
 import styled, { css } from 'styled-components';
 import translator from 'client/hocs/translator';
-import withConfig from 'client/hocs/with-config';
 
 type Props = {
   blog: {
     posts: Array<Post>,
   },
-  config: Config,
 } & RouteProps & TranslateProps;
 
 const getFirstParagraph = compose(
@@ -56,10 +54,10 @@ const CommentsTitle = styled(Type.subheading)`
   ${margin.bottom('small')}
 `;
 
-const BlogPost = ({ config, location, match, translate }: Props) => {
+const BlogPost = ({ location, match, translate }: Props) => {
   const { postId } = match.params;
   const { content, date, title } = getBlogPost(postId);
-  const hasCommentSection = !!config.get('remarkbox.key');
+  const hasCommentSection = !!config.remarkboxKey;
 
   return (
     <article>
@@ -88,7 +86,7 @@ const BlogPost = ({ config, location, match, translate }: Props) => {
 
       <StyledShare
         hasCommentSection={hasCommentSection}
-        url={config.get('baseUrl') + location.pathname}
+        url={config.baseUrl + location.pathname}
       />
 
       {hasCommentSection && (
@@ -104,7 +102,4 @@ const BlogPost = ({ config, location, match, translate }: Props) => {
   );
 };
 
-export default compose(
-  withConfig,
-  translator
-)(BlogPost);
+export default translator(BlogPost);

@@ -1,17 +1,11 @@
 // @flow
 
-import type { Config } from 'common/types';
 import type { RouteProps } from 'client/types';
-import { compose } from 'recompose';
 import { withRouter } from 'react-router-dom';
 import React from 'react';
 import Remarkbox from 'react-remarkbox';
+import config from 'common/config';
 import styled from 'styled-components';
-import withConfig from 'client/hocs/with-config';
-
-type Props = {
-  config: Config,
-} & RouteProps;
 
 const StyledRemarkbox = styled(Remarkbox)`
   margin-bottom: -32px;
@@ -20,15 +14,12 @@ const StyledRemarkbox = styled(Remarkbox)`
   width: 1px;
 `;
 
-const CommentBox = ({ config, location }: Props) => (
+const CommentBox = ({ location }: RouteProps) => (
   <StyledRemarkbox
-    remarkboxKey={config.get('remarkbox.key')}
+    remarkboxKey={config.remarkboxKey}
     threadFragment={location.hash}
-    threadUri={config.get('baseUrl') + location.pathname}
+    threadUri={config.baseUrl + location.pathname}
   />
 );
 
-export default compose(
-  withConfig,
-  withRouter
-)(CommentBox);
+export default withRouter(CommentBox);
