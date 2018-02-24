@@ -8,11 +8,12 @@
   "main": "./src/index.js",
   "repository": "https://github.com/bsonntag/bsonntag.github.io",
   "scripts": {
-    "bundle": "npm run bundle:cleanup && npm run bundle:html && npm run bundle:assets && npm run bundle:js",
+    "bundle": "npm run bundle:cleanup && npm run bundle:html-bundler && npm run bundle:html && npm run bundle:assets && npm run bundle:js",
     "bundle:assets": "cp src/assets/* dist/",
     "bundle:cleanup": "rm -rf dist/* && mkdir -p dist/blog",
-    "bundle:html": "babel-node src/bin/bundle-html.js",
-    "bundle:js": "babel-node src/bin/bundle-js.js",
+    "bundle:html": "node build/bin/bundle-html.js",
+    "bundle:html-bundler": "parcel build --out-dir ./build/bin --public-url /static --target node src/bin/bundle-html.js",
+    "bundle:js": "SSR=true parcel build --out-dir ./dist/static --public-url /static src/client/app.js",
     "lint": "eslint src",
     "release": "babel-node src/bin/release/index.js",
     "start": "nodemon --watch src --exec babel-node src/server/index.js"
