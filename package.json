@@ -16,7 +16,10 @@
     "bundle:js": "SSR=true parcel build --out-dir ./dist/static --public-url /static src/client/app.js",
     "lint": "eslint src",
     "release": "babel-node src/bin/release/index.js",
-    "start": "nodemon --watch src --exec babel-node src/server/index.js"
+    "ssr-start": "nodemon --watch build build/server/index.js",
+    "ssr-watch-client": "SSR=true parcel watch --out-dir ./build/client --public-url /static src/client/app.js",
+    "ssr-watch-server": "parcel watch --out-dir ./build/server --public-url /static --target node src/server/index.js",
+    "start": "parcel --out-dir build --port 3000 src/client/index.html"
   },
   "dependencies": {
     "bluebird": "^3.5.1",
