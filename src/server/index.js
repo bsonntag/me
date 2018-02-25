@@ -3,10 +3,13 @@
 
 import { renderClient } from 'client';
 import { renderToString } from 'react-dom/server';
+import dotenv from 'dotenv';
 import express from 'express';
 import morgan from 'morgan';
 
-const port = 3000;
+dotenv.config();
+
+const port = process.env.SERVER_PORT || 3000; // eslint-disable-line no-process-env
 
 const app = express();
 
