@@ -1,5 +1,6 @@
 [ignore]
 .*/dist/.*
+.*/node_modules/config-chain/test/.*
 
 [libs]
 flow-typed/custom
