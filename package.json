@@ -32,13 +32,13 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-helmet": "^5.2.0",
-    "react-markdown": "^3.1.5",
-    "react-remarkbox": "^0.0.1",
+    "react-markdown": "^3.2.1",
+    "react-remarkbox": "^0.0.2",
     "react-router-dom": "^4.2.2",
     "recompose": "^0.26.0",
-    "styled-components": "^2.3.0",
-    "styled-normalize": "^2.2.1",
-    "styled-tools": "^0.2.2"
+    "styled-components": "^2.4.0",
+    "styled-normalize": "^4.0.0",
+    "styled-tools": "^0.4.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
