@@ -1,14 +1,5 @@
 // @flow
 
-import color from 'color';
-
-export function transparentize(colour: string, transparency: number): string {
-  return color(colour)
-    .alpha(transparency)
-    .rgb()
-    .string();
-}
-
 const black = '#000000';
 const white = '#ffffff';
 
