@@ -6,12 +6,15 @@ import { getPostList } from 'blog';
 import { renderClient } from 'client';
 import { renderToString } from 'react-dom/server';
 import Bluebird from 'bluebird';
+import dotenv from 'dotenv';
 import fs from 'fs';
 
 type Page = {
   fileName: string,
   path: string,
 };
+
+dotenv.config();
 
 const writeFile = Bluebird.promisify(fs.writeFile);
 
