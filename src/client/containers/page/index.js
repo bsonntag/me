@@ -4,7 +4,7 @@ import type { Node } from 'react';
 import { colors, padding } from 'client/styles';
 import Footer from './footer';
 import Header from './header';
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
 type Props = {
@@ -20,7 +20,7 @@ const Content = styled.main`
 `;
 
 const Page = ({ children }: Props) => (
-  <div>
+  <Fragment>
     <Header />
 
     <Content>
@@ -28,7 +28,7 @@ const Page = ({ children }: Props) => (
     </Content>
 
     <Footer />
-  </div>
+  </Fragment>
 );
 
 export default Page;
