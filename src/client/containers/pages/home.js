@@ -4,7 +4,7 @@ import type { TranslateProps } from 'client/types';
 import { getPostList } from 'blog';
 import { margin } from 'client/styles';
 import Blog from 'client/components/home/blog';
-import React from 'react';
+import React, { Fragment } from 'react';
 import Type from 'client/components/type';
 import styled from 'styled-components';
 import translator from 'client/hocs/translator';
@@ -16,7 +16,7 @@ const Section = styled.div`
 `;
 
 const Home = ({ translate }: TranslateProps) => (
-  <div>
+  <Fragment>
     <Type.heading>
       {translate('home.heading')}
     </Type.heading>
@@ -48,7 +48,7 @@ const Home = ({ translate }: TranslateProps) => (
 
       <Blog posts={getPostList()} />
     </Section>
-  </div>
+  </Fragment>
 );
 
 export default translator(Home);
