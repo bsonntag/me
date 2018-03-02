@@ -10,7 +10,7 @@ import { margin } from 'client/styles';
 import { renderDate } from 'client/utils';
 import CommentBox from 'client/components/comment-box';
 import Markdown from 'client/components/markdown';
-import React from 'react';
+import React, { Fragment } from 'react';
 import Share from 'client/components/share';
 import Type from 'client/components/type';
 import config from 'common/config';
@@ -38,7 +38,7 @@ const PostDate = styled(Type.paragraph)`
   ${margin.bottom('medium')}
 `;
 
-const Content = styled.div`
+const StyledMarkdown = styled(Markdown)`
   ${margin.bottom('large')}
 `;
 
@@ -60,29 +60,29 @@ const BlogPost = ({ location, match, translate }: Props) => {
   const hasCommentSection = !!config.remarkboxKey;
 
   return (
-    <article>
-      <Helmet>
-        <title>
+    <Fragment>
+      <article>
+        <Helmet>
+          <title>
+            {title}
+          </title>
+
+          <meta
+            content={getFirstParagraph(content)}
+            property={'og:description'}
+          />
+        </Helmet>
+
+        <Title>
           {title}
-        </title>
+        </Title>
 
-        <meta
-          content={getFirstParagraph(content)}
-          property={'og:description'}
-        />
-      </Helmet>
+        <PostDate>
+          {renderDate(date)}
+        </PostDate>
 
-      <Title>
-        {title}
-      </Title>
-
-      <PostDate>
-        {renderDate(date)}
-      </PostDate>
-
-      <Content>
-        <Markdown source={content} />
-      </Content>
+        <StyledMarkdown source={content} />
+      </article>
 
       <StyledShare
         hasCommentSection={hasCommentSection}
@@ -91,15 +91,15 @@ const BlogPost = ({ location, match, translate }: Props) => {
       />
 
       {hasCommentSection && (
-        <div>
+        <Fragment>
           <CommentsTitle>
             {translate('blogPost.comments.title')}
           </CommentsTitle>
 
           <CommentBox />
-        </div>
+        </Fragment>
       )}
-    </article>
+    </Fragment>
   );
 };
 
