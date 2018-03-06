@@ -1,13 +1,21 @@
 // @flow
 
-import { compose } from 'recompose';
-import { withRouter } from 'react-router-dom';
-import withPropWillChange from 'client/hocs/with-prop-will-change';
+import { Route } from 'react-router-dom';
+import PropWillChange from 'client/components/prop-will-change';
+import React from 'react';
 
-export default compose(
-  withRouter,
-  withPropWillChange(
-    'location.pathname',
-    () => window.scrollTo(0, 0)
-  )
-)(() => null);
+const scrollToTop = () => window.scrollTo(0, 0);
+
+const ScrollRestoration = () => (
+  <Route>
+    {routeProps => (
+      <PropWillChange
+        {...routeProps}
+        onChange={scrollToTop}
+        propName={'location.pathname'}
+      />
+    )}
+  </Route>
+);
+
+export default ScrollRestoration;
