@@ -38,12 +38,10 @@ const PostDate = styled(Type.paragraph)`
   ${margin.bottom('medium')}
 `;
 
-const StyledMarkdown = styled(Markdown)`
-  ${margin.bottom('large')}
-`;
-
 const StyledShare = styled(Share)`
   justify-content: flex-end;
+
+  ${margin.top('large')}
 
   ${ifProp('hasCommentSection', css`
     ${margin.bottom('medium')}
@@ -81,7 +79,7 @@ const BlogPost = ({ location, match, translate }: Props) => {
           {renderDate(date)}
         </PostDate>
 
-        <StyledMarkdown source={content} />
+        <Markdown source={content} />
       </article>
 
       <StyledShare

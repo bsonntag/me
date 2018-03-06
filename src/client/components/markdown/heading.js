@@ -2,17 +2,35 @@
 
 import { HeadingLink } from 'client/components/links';
 import { kebabCase } from 'lodash';
+import { margin } from 'client/styles';
 import React from 'react';
+import Type from 'client/components/type';
+import styled from 'styled-components';
 
 type Props = {
   children: string,
   level: number,
 };
 
+function getComponent(level: number) {
+  switch (level) {
+    case 1:
+      return Type.heading;
+    case 2:
+      return styled(Type.title)`
+        ${margin.top('medium')}
+      `;
+    case 3:
+      return Type.subheading;
+    default:
+      return `h${level}`;
+  }
+}
+
 const Heading = ({ children, level }: Props) => {
   const id = kebabCase(children);
   const url = `#${id}`;
-  const Component = `h${level}`;
+  const Component = getComponent(level);
 
   return (
     <HeadingLink href={url}>
