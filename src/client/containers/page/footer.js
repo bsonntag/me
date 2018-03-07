@@ -1,12 +1,11 @@
 // @flow
 
 import { ExternalLink, Link } from 'client/components/links';
-import type { TranslateProps } from 'client/types';
+import { Translate } from 'client/containers/translations';
 import { colors, margin, padding } from 'client/styles';
 import React from 'react';
 import Type from 'client/components/type';
 import styled from 'styled-components';
-import translator from 'client/hocs/translator';
 
 const renderCopyright = () => `© ${new Date().getFullYear()} `;
 
@@ -31,32 +30,32 @@ const Content = styled.div`
   }
 `;
 
-const Footer = ({ translate }: TranslateProps) => (
+const Footer = () => (
   <Container>
     <Content>
       <Type.caption>
         {renderCopyright()}
 
         <Link to={'/'}>
-          {translate('name')}
+          <Translate path={'name'} />
         </Link>
       </Type.caption>
 
       <Type.caption>
-        {translate('footer.builtWith')}
+        <Translate path={'footer.builtWith'} />
 
         <ExternalLink href={'https://reactjs.org/'}>
-          {translate('footer.react')}
+          <Translate path={'footer.react'} />
         </ExternalLink>
 
-        {translate('footer.hostedOn')}
+        <Translate path={'footer.hostedOn'} />
 
         <ExternalLink href={'https://pages.github.com/'}>
-          {translate('footer.githubPages')}
+          <Translate path={'footer.githubPages'} />
         </ExternalLink>
       </Type.caption>
     </Content>
   </Container>
 );
 
-export default translator(Footer);
+export default Footer;

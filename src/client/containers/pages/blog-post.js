@@ -2,7 +2,8 @@
 
 import { Helmet } from 'react-helmet';
 import type { Post } from 'blog';
-import type { RouteProps, TranslateProps } from 'client/types';
+import type { RouteProps } from 'client/types';
+import { Translator } from 'client/containers/translations';
 import { compose, head, replace, split, trim } from 'lodash/fp';
 import { getBlogPost } from 'blog';
 import { ifProp } from 'styled-tools';
@@ -15,13 +16,12 @@ import Share from 'client/components/share';
 import Type from 'client/components/type';
 import config from 'common/config';
 import styled, { css } from 'styled-components';
-import translator from 'client/hocs/translator';
 
 type Props = {
   blog: {
     posts: Array<Post>,
   },
-} & RouteProps & TranslateProps;
+} & RouteProps;
 
 const getFirstParagraph = compose(
   trim,
@@ -52,7 +52,7 @@ const CommentsTitle = styled(Type.subheading)`
   ${margin.bottom('small')}
 `;
 
-const BlogPost = ({ location, match, translate }: Props) => {
+const BlogPost = ({ location, match }: Props) => {
   const { postId } = match.params;
   const { content, date, title } = getBlogPost(postId);
   const hasCommentSection = !!config.remarkboxKey;
@@ -82,23 +82,29 @@ const BlogPost = ({ location, match, translate }: Props) => {
         <Markdown source={content} />
       </article>
 
-      <StyledShare
-        hasCommentSection={hasCommentSection}
-        label={translate('blogPost.share')}
-        url={config.baseUrl + location.pathname}
-      />
+      <Translator>
+        {translate => (
+          <Fragment>
+            <StyledShare
+              hasCommentSection={hasCommentSection}
+              label={translate('blogPost.share')}
+              url={config.baseUrl + location.pathname}
+            />
 
-      {hasCommentSection && (
-        <Fragment>
-          <CommentsTitle>
-            {translate('blogPost.comments.title')}
-          </CommentsTitle>
+            {hasCommentSection && (
+              <Fragment>
+                <CommentsTitle>
+                  {translate('blogPost.comments.title')}
+                </CommentsTitle>
 
-          <CommentBox />
-        </Fragment>
-      )}
+                <CommentBox />
+              </Fragment>
+            )}
+          </Fragment>
+        )}
+      </Translator>
     </Fragment>
   );
 };
 
-export default translator(BlogPost);
+export default BlogPost;

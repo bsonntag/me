@@ -1,25 +1,24 @@
 // @flow
 
 import type { Element } from 'react';
-import type { StaticHelmet, Translate } from 'client/types';
+import type { StaticHelmet } from 'client/types';
+import { Translator } from 'client/containers/translations';
 import { resolve } from 'url';
 import React from 'react';
 import ben from 'assets/ben.jpg';
 import config from 'common/config';
-import translator from 'client/hocs/translator';
 
 type Props = {
   children: string,
   helmet: StaticHelmet,
   styles: Array<Element<*>>,
-  translate: Translate,
 };
 
 const renderInnerHtml = html => ({
   __html: html, // eslint-disable-line id-match
 });
 
-const Html = ({ children, helmet, styles, translate }: Props) => (
+const Html = ({ children, helmet, styles }: Props) => (
   <html {...helmet.htmlAttributes.toComponent()}>
     <head>
       <meta charSet={'utf-8'} />
@@ -41,10 +40,14 @@ const Html = ({ children, helmet, styles, translate }: Props) => (
         property={'og:image'}
       />
 
-      <meta
-        content={translate('meta.twitterHandle')}
-        name={'twitter:creator'}
-      />
+      <Translator>
+        {translate => (
+          <meta
+            content={translate('meta.twitterHandle')}
+            name={'twitter:creator'}
+          />
+        )}
+      </Translator>
 
       {helmet.meta.toComponent()}
 
@@ -72,4 +75,4 @@ const Html = ({ children, helmet, styles, translate }: Props) => (
   </html>
 );
 
-export default translator(Html);
+export default Html;

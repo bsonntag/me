@@ -1,11 +1,10 @@
 // @flow
 
 import { Link } from 'react-router-dom';
-import type { TranslateProps } from 'client/types';
+import { Translate } from 'client/containers/translations';
 import React from 'react';
 import Type from 'client/components/type';
 import styled from 'styled-components';
-import translator from 'client/hocs/translator';
 
 const Container = styled.div`
   align-items: center;
@@ -15,20 +14,20 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const NotFound = ({ translate }: TranslateProps) => (
+const NotFound = () => (
   <Container>
     <Type.heading>
-      {translate('notFound.title')}
+      <Translate path={'notFound.title'} />
     </Type.heading>
 
     <Type.paragraph>
-      {translate('notFound.go')}
+      <Translate path={'notFound.go'} />
 
       <Link to={'/'}>
-        {translate('notFound.home')}
+        <Translate path={'notFound.home'} />
       </Link>
     </Type.paragraph>
   </Container>
 );
 
-export default translator(NotFound);
+export default NotFound;

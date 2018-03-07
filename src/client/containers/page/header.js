@@ -1,6 +1,6 @@
 // @flow
 
-import type { TranslateProps } from 'client/types';
+import { Translate } from 'client/containers/translations';
 import { UnstyledLink } from 'client/components/links';
 import { colors, margin, media, padding, units } from 'client/styles';
 import Image from 'client/components/image';
@@ -9,7 +9,6 @@ import SocialNetworks from 'client/components/social-networks';
 import Type from 'client/components/type';
 import ben from 'assets/ben.jpg';
 import styled from 'styled-components';
-import translator from 'client/hocs/translator';
 
 const Container = styled.header`
   align-items: center;
@@ -46,7 +45,7 @@ const InfoContainer = styled.div`
   `}
 `;
 
-const Header = ({ translate }: TranslateProps) => (
+const Header = () => (
   <Container>
     <Image
       round
@@ -57,7 +56,7 @@ const Header = ({ translate }: TranslateProps) => (
     <InfoContainer>
       <Type.heading>
         <UnstyledLink to={'/'}>
-          {translate('name')}
+          <Translate path={'name'} />
         </UnstyledLink>
       </Type.heading>
 
@@ -66,4 +65,4 @@ const Header = ({ translate }: TranslateProps) => (
   </Container>
 );
 
-export default translator(Header);
+export default Header;
