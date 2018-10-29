@@ -1,10 +1,9 @@
 // @flow
 
-import type { BreakpointKey } from './breakpoints';
+import { type BreakpointKey, sortBreakpoints } from './breakpoints';
 import { css } from 'styled-components';
 import { get } from 'lodash';
 import { media } from './media';
-import { sortBreakpoints } from './breakpoints';
 import { units } from './units';
 
 export type Spacing = {

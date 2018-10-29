@@ -1,10 +1,9 @@
 // @flow
 
-import type { Node } from 'react';
 import { colors, padding } from 'client/styles';
 import Footer from './footer';
 import Header from './header';
-import React, { Fragment } from 'react';
+import React, { Fragment, type Node } from 'react';
 import styled from 'styled-components';
 
 type Props = {

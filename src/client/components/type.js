@@ -1,11 +1,8 @@
 // @flow
 
-import type { ComponentType } from 'react';
-import type { TypographyKeys } from 'client/styles';
-import { compose, setDisplayName } from 'recompose';
-import { createTypeStyle, typography } from 'client/styles';
+import { type TypographyKeys, createTypeStyle, typography } from 'client/styles';
 import { reduce } from 'lodash';
-import React from 'react';
+import React, { type ComponentType } from 'react';
 import styled from 'styled-components';
 
 type Props = {
@@ -15,24 +12,27 @@ type Props = {
   raw?: boolean,
 };
 
-const type = Component => ({ children, raw, ...rest }: Props) => {
-  const props = {
-    ...rest,
-    ...raw ? {
-      dangerouslySetInnerHTML: {
-        __html: children, // eslint-disable-line id-match
-      },
-    } : { children },
+const type = (displayName, Component) => {
+  const Type = ({ children, raw, ...rest }: Props) => {
+    const props = {
+      ...rest,
+      ...raw ? {
+        dangerouslySetInnerHTML: {
+          __html: children, // eslint-disable-line id-match
+        },
+      } : { children },
+    };
+
+    return <Component {...props} />;
   };
 
-  return <Component {...props} />;
+  Type.displayName = displayName;
+
+  return Type;
 };
 
 const createTypeComponent = (name, { element, ...typeConfig }) => {
-  return compose(
-    setDisplayName(`Type.${name}`),
-    type
-  )(styled(element)`${createTypeStyle(typeConfig)}`);
+  return type(`Type.${name}`, styled(element)`${createTypeStyle(typeConfig)}`);
 };
 
 type Typography = {

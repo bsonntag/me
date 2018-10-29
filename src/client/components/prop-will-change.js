@@ -11,7 +11,7 @@ type Props = {
 class PropWillChange extends Component<Props> {
 
   componentWillReceiveProps(nextProps: Props) {
-    const { propName, onChange } = nextProps;
+    const { onChange, propName } = nextProps;
 
     const newValue = get(nextProps, propName);
     const oldValue = get(this.props, propName);

@@ -1,9 +1,8 @@
 // @flow
 
-import type { Node } from 'react';
 import { units } from 'client/styles';
 import Icon from 'client/components/icon';
-import React from 'react';
+import React, { type Node } from 'react';
 import styled from 'styled-components';
 
 type Props = {

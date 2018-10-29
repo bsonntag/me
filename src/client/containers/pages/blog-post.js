@@ -1,11 +1,10 @@
 // @flow
 
 import { Helmet } from 'react-helmet';
-import type { Post } from 'blog';
-import type { RouteProps } from 'client/types';
+import { type Post, getBlogPost } from 'blog';
+import { type RouteProps } from 'client/types';
 import { Translator } from 'client/containers/translations';
 import { compose, head, replace, split, trim } from 'lodash/fp';
-import { getBlogPost } from 'blog';
 import { ifProp } from 'styled-tools';
 import { margin } from 'client/styles';
 import { renderDate } from 'client/utils';

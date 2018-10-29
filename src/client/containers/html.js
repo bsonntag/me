@@ -1,10 +1,9 @@
 // @flow
 
-import type { Element } from 'react';
-import type { StaticHelmet } from 'client/types';
+import { type StaticHelmet } from 'client/types';
 import { Translator } from 'client/containers/translations';
 import { resolve } from 'url';
-import React from 'react';
+import React, { type Element } from 'react';
 import ben from 'assets/ben.jpg';
 import config from 'common/config';
 
