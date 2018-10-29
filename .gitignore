@@ -1,7 +1,5 @@
 .cache
-.env
-build
-config/local.js
-dist
+.env*
 node_modules
 package-lock.json
+/public

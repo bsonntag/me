@@ -1,3 +1,9 @@
+---
+title: "Functional React"
+path: "/blog/functional-react"
+date: "2017-12-17"
+---
+
 I love React and I love functional programming.
 Here I'll describe how I tried to make React more functional.
 

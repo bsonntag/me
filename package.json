@@ -8,23 +8,11 @@
   "main": "./src/index.js",
   "repository": "https://github.com/bsonntag/bsonntag.github.io",
   "scripts": {
-    "bundle": "npm run bundle:cleanup && npm run bundle:html-bundler && npm run bundle:html && npm run bundle:assets && npm run bundle:js",
-    "bundle:assets": "cp src/assets/* dist/",
-    "bundle:cleanup": "rm -rf dist/* && mkdir -p dist/blog",
-    "bundle:html": "node build/bin/bundle-html.js",
-    "bundle:html-bundler": "parcel build --out-dir ./build/bin --public-url /static --target node src/bin/bundle-html.js",
-    "bundle:js": "SSR=true parcel build --out-dir ./dist/static --public-url /static src/client/app.js",
-    "lint": "eslint src",
-    "ssr-start": "nodemon --watch build build/server/index.js",
-    "ssr-watch-client": "SSR=true parcel watch --out-dir ./build/client --public-url /static src/client/app.js",
-    "ssr-watch-server": "parcel watch --out-dir ./build/server --public-url /static --target node src/server/index.js",
-    "start": "parcel --out-dir build --port 3000 src/client/index.html"
+    "bundle": "gatsby build",
+    "lint": "eslint .",
+    "start": "gatsby develop"
   },
   "dependencies": {
-    "bluebird": "^3.5.1",
-    "dotenv": "^5.0.0",
-    "express": "^4.16.2",
-    "morgan": "^1.9.0",
     "prismjs": "^1.11.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
@@ -38,19 +26,20 @@
     "styled-tools": "^1.5.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-plugin-inline-import": "^2.0.6",
-    "babel-plugin-module-resolver": "^3.1.0",
     "babel-plugin-styled-components": "^1.8.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
     "eslint": "^4.12.1",
     "eslint-config-seegno": "^10.0.0",
     "eslint-plugin-react": "^7.7.0",
-    "nodemon": "^1.15.1",
-    "parcel-bundler": "^1.6.2",
+    "gatsby": "^2.0.19",
+    "gatsby-image": "^2.0.15",
+    "gatsby-plugin-manifest": "^2.0.5",
+    "gatsby-plugin-offline": "^2.0.5",
+    "gatsby-plugin-react-helmet": "^3.0.0",
+    "gatsby-plugin-sharp": "^2.0.10",
+    "gatsby-plugin-styled-components": "^3.0.0",
+    "gatsby-source-filesystem": "^2.0.4",
+    "gatsby-transformer-remark": "^2.1.10",
+    "gatsby-transformer-sharp": "^2.1.6",
     "sort-package-json": "^1.11.0"
   }
 }
