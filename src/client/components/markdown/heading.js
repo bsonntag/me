@@ -1,5 +1,3 @@
-// @flow
-
 import { HeadingLink } from 'client/components/links';
 import { kebabCase } from 'lodash';
 import { margin } from 'client/styles';
@@ -7,12 +5,7 @@ import React from 'react';
 import Type from 'client/components/type';
 import styled from 'styled-components';
 
-type Props = {
-  children: string,
-  level: number,
-};
-
-function getComponent(level: number) {
+function getComponent(level) {
   switch (level) {
     case 1:
       return Type.heading;
@@ -27,7 +20,7 @@ function getComponent(level: number) {
   }
 }
 
-const Heading = ({ children, level }: Props) => {
+const Heading = ({ children, level }) => {
   const id = kebabCase(children);
   const url = `#${id}`;
   const Component = getComponent(level);

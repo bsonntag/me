@@ -1,10 +1,7 @@
-// @flow
-
-import type { IconProps } from './types';
 import React from 'react';
 import Svg from './svg';
 
-const Github = (props: IconProps) => (
+const Github = props => (
   <Svg
     version={'1.1'}
     viewBox={'0 0 16 16'}

@@ -1,5 +1,3 @@
-// @flow
-
 import { Translate } from 'client/containers/translations';
 import { UnstyledLink } from 'client/components/links';
 import { colors, margin, media, padding, units } from 'client/styles';

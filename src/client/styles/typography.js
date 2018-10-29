@@ -1,21 +1,10 @@
-// @flow
-
 import { css } from 'styled-components';
 import { margin } from './spacing';
 import { reduce, round } from 'lodash';
 
-type TypeConfig = {|
-  element: string,
-  fontFamily?: string,
-  fontSize: number,
-  fontWeight: string,
-  lineHeight: number,
-  marginBottom?: string,
-|};
-
 export const defaultFontSize = 16;
 
-const heading: TypeConfig = {
+const heading = {
   element: 'h1',
   fontSize: 34,
   fontWeight: 'normal',
@@ -23,7 +12,7 @@ const heading: TypeConfig = {
   marginBottom: margin.bottom('medium'),
 };
 
-const title: TypeConfig = {
+const title = {
   element: 'h2',
   fontSize: 24,
   fontWeight: 'bold',
@@ -31,14 +20,14 @@ const title: TypeConfig = {
   marginBottom: margin.bottom('small'),
 };
 
-const subheading: TypeConfig = {
+const subheading = {
   element: 'h3',
   fontSize: 20,
   fontWeight: 'normal',
   lineHeight: 24,
 };
 
-const paragraph: TypeConfig = {
+const paragraph = {
   element: 'p',
   fontFamily: `'Open Sans', sans-serif`,
   fontSize: defaultFontSize,
@@ -46,7 +35,7 @@ const paragraph: TypeConfig = {
   lineHeight: 24,
 };
 
-const caption: TypeConfig = {
+const caption = {
   element: 'small',
   fontFamily: `'Open Sans', sans-serif`,
   fontSize: 14,
@@ -60,7 +49,7 @@ export const createTypeStyle = ({
   fontWeight,
   lineHeight,
   marginBottom,
-}: TypeConfig) => css`
+}) => css`
   font-size: ${fontSize}px;
   font-weight: ${fontWeight};
   line-height: ${round(lineHeight / fontSize, 5)}em;
@@ -76,8 +65,6 @@ export const typography = {
   subheading,
   title,
 };
-
-export type TypographyKeys = $Keys<typeof typography>;
 
 export const typeStyles = reduce(
   typography,

@@ -1,10 +1,7 @@
-// @flow
-
-import type { IconProps } from './types';
 import React from 'react';
 import Svg from './svg';
 
-const Link = (props: IconProps) => (
+const Link = props => (
   <Svg
     version={'1.1'}
     viewBox={'0 0 465.951 465.951'}

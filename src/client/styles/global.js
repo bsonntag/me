@@ -1,5 +1,3 @@
-// @flow
-
 import { defaultFontSize } from './typography';
 import { injectGlobal } from 'styled-components';
 import normalize from 'styled-normalize';

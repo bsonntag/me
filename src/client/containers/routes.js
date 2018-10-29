@@ -1,5 +1,3 @@
-// @flow
-
 import { Route, Switch } from 'react-router-dom';
 import BlogPost from 'client/containers/pages/blog-post';
 import Home from 'client/containers/pages/home';

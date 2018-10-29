@@ -1,5 +1,3 @@
-// @flow
-
 import { Link } from 'react-router-dom';
 import { Translate } from 'client/containers/translations';
 import React from 'react';

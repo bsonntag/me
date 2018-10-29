@@ -1,6 +1,4 @@
-// @flow
-
-export const renderDate = (date: Date): string => {
+export const renderDate = date => {
   return date.toLocaleString('en', {
     day: 'numeric',
     month: 'long',

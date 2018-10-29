@@ -1,17 +1,9 @@
-// @flow
-
 import { ExternalLink } from 'client/components/links';
 import { margin, units } from 'client/styles';
 import Icon from 'client/components/icon';
 import React from 'react';
 import Type from 'client/components/type';
 import styled from 'styled-components';
-
-type Props = {
-  className?: string,
-  label: string,
-  url: string,
-};
 
 const facebookUrl = url => `https://www.facebook.com/sharer/sharer.php?u=${url}`;
 
@@ -34,7 +26,7 @@ const ScallingLink = styled(ExternalLink)`
   }
 `;
 
-const Share = ({ className, label, url }: Props) => (
+const Share = ({ className, label, url }) => (
   <Container className={className}>
     <Type.caption>
       {label}

@@ -1,5 +1,3 @@
-// @flow
-
 import { externalLink } from './utils';
 
 const name = 'Benjamim Sonntag';

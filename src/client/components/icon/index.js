@@ -1,5 +1,3 @@
-// @flow
-
 import facebook from './facebook';
 import github from './github';
 import link from './link';

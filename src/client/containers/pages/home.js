@@ -1,5 +1,3 @@
-// @flow
-
 import { Translator } from 'client/containers/translations';
 import { getPostList } from 'blog';
 import { margin } from 'client/styles';

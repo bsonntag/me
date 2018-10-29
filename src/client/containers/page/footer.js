@@ -1,5 +1,3 @@
-// @flow
-
 import { ExternalLink, Link } from 'client/components/links';
 import { Translate } from 'client/containers/translations';
 import { colors, margin, padding } from 'client/styles';

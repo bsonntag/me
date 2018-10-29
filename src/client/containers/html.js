@@ -1,24 +1,14 @@
-// @flow
-
-import type { Element } from 'react';
-import type { StaticHelmet } from 'client/types';
 import { Translator } from 'client/containers/translations';
 import { resolve } from 'url';
 import React from 'react';
 import ben from 'assets/ben.jpg';
 import config from 'common/config';
 
-type Props = {
-  children: string,
-  helmet: StaticHelmet,
-  styles: Array<Element<*>>,
-};
-
 const renderInnerHtml = html => ({
   __html: html, // eslint-disable-line id-match
 });
 
-const Html = ({ children, helmet, styles }: Props) => (
+const Html = ({ children, helmet, styles }) => (
   <html {...helmet.htmlAttributes.toComponent()}>
     <head>
       <meta charSet={'utf-8'} />

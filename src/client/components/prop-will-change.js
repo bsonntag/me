@@ -1,16 +1,9 @@
-// @flow
-
 import { Component } from 'react';
 import { get } from 'lodash';
 
-type Props = {
-  onChange: any => void,
-  propName: string,
-};
+class PropWillChange extends Component {
 
-class PropWillChange extends Component<Props> {
-
-  componentWillReceiveProps(nextProps: Props) {
+  componentWillReceiveProps(nextProps) {
     const { propName, onChange } = nextProps;
 
     const newValue = get(nextProps, propName);

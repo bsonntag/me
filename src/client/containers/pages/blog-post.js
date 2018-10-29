@@ -1,8 +1,4 @@
-// @flow
-
 import { Helmet } from 'react-helmet';
-import type { Post } from 'blog';
-import type { RouteProps } from 'client/types';
 import { Translator } from 'client/containers/translations';
 import { compose, head, replace, split, trim } from 'lodash/fp';
 import { getBlogPost } from 'blog';
@@ -16,12 +12,6 @@ import Share from 'client/components/share';
 import Type from 'client/components/type';
 import config from 'common/config';
 import styled, { css } from 'styled-components';
-
-type Props = {
-  blog: {
-    posts: Array<Post>,
-  },
-} & RouteProps;
 
 const getFirstParagraph = compose(
   trim,
@@ -52,7 +42,7 @@ const CommentsTitle = styled(Type.subheading)`
   ${margin.bottom('small')}
 `;
 
-const BlogPost = ({ location, match }: Props) => {
+const BlogPost = ({ location, match }) => {
   const { postId } = match.params;
   const { content, date, title } = getBlogPost(postId);
   const hasCommentSection = !!config.remarkboxKey;

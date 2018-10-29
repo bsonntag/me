@@ -1,5 +1,3 @@
-// @flow
-
 export const breakpoints = {
   lg: 1200,
   md: 992,
@@ -9,8 +7,6 @@ export const breakpoints = {
   xxs: 320,
 };
 
-export type BreakpointKey = $Keys<typeof breakpoints>;
-
-export const sortBreakpoints = (keys: Array<BreakpointKey>): Array<BreakpointKey> => {
+export const sortBreakpoints = keys => {
   return keys.sort((first, second) => breakpoints[first] - breakpoints[second]);
 };

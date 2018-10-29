@@ -1,15 +1,7 @@
-// @flow
-
-import type { Node } from 'react';
 import { units } from 'client/styles';
 import Icon from 'client/components/icon';
 import React from 'react';
 import styled from 'styled-components';
-
-type Props = {
-  children: Node,
-  href: string,
-};
 
 const AnchorContainer = styled.aside`
   align-items: center;
@@ -41,7 +33,7 @@ const Container = styled.div`
  * The icon is inside a div so that it doesn't appear on Firefox's reader view.
  */
 
-export const HeadingLink = ({ children, href }: Props) => (
+export const HeadingLink = ({ children, href }) => (
   <Container>
     <AnchorContainer aria-hidden>
       <a href={href}>
