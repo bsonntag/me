@@ -20,11 +20,8 @@ const Container = styled.div`
   }
 `;
 
-const SocialNetwork = ({ Icon, key, url }) => (
-  <ScallingLink
-    href={url}
-    key={key}
-  >
+const SocialNetwork = ({ Icon, url }) => (
+  <ScallingLink href={url}>
     <Icon size={units(4)} />
   </ScallingLink>
 );
