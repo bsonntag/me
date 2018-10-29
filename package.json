@@ -8,17 +8,7 @@
   "main": "./src/index.js",
   "repository": "https://github.com/bsonntag/bsonntag.github.io",
   "scripts": {
-    "bundle": "npm run bundle:cleanup && npm run bundle:html-bundler && npm run bundle:html && npm run bundle:assets && npm run bundle:js",
-    "bundle:assets": "cp src/assets/* dist/",
-    "bundle:cleanup": "rm -rf dist/* && mkdir -p dist/blog",
-    "bundle:html": "node build/bin/bundle-html.js",
-    "bundle:html-bundler": "parcel build --out-dir ./build/bin --public-url /static --target node src/bin/bundle-html.js",
-    "bundle:js": "SSR=true parcel build --out-dir ./dist/static --public-url /static src/client/app.js",
-    "lint": "eslint src",
-    "ssr-start": "nodemon --watch build build/server/index.js",
-    "ssr-watch-client": "SSR=true parcel watch --out-dir ./build/client --public-url /static src/client/app.js",
-    "ssr-watch-server": "parcel watch --out-dir ./build/server --public-url /static --target node src/server/index.js",
-    "start": "parcel --out-dir build --port 3000 src/client/index.html"
+    "lint": "eslint src"
   },
   "dependencies": {
     "prismjs": "^1.11.0",
