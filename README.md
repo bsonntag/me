@@ -14,9 +14,17 @@ Clone this repository and install the dependencies with `yarn install`.
 
 ## Development
 
-A local server for development can be run with `yarn start`.
+This website is build with Gatsby.
+A local server for development can be run with `yarn start`.  
+It will run on port 8000, so you can access it on http://localhost:8000.
 
-It will run on port 3000, so you can access it on http://localhost:3000.
+## Build
+
+To build the website for production run:
+
+```js
+$ NODE_ENV=production yarn bundle
+```
 
 ## Contributing
 
