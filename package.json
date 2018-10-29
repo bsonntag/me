@@ -15,7 +15,6 @@
     "bundle:html-bundler": "parcel build --out-dir ./build/bin --public-url /static --target node src/bin/bundle-html.js",
     "bundle:js": "SSR=true parcel build --out-dir ./dist/static --public-url /static src/client/app.js",
     "lint": "eslint src",
-    "release": "babel-node src/bin/release/index.js",
     "ssr-start": "nodemon --watch build build/server/index.js",
     "ssr-watch-client": "SSR=true parcel watch --out-dir ./build/client --public-url /static src/client/app.js",
     "ssr-watch-server": "parcel watch --out-dir ./build/server --public-url /static --target node src/server/index.js",
@@ -24,10 +23,8 @@
   "dependencies": {
     "bluebird": "^3.5.1",
     "dotenv": "^5.0.0",
-    "execa": "^0.9.0",
     "express": "^4.16.2",
     "morgan": "^1.9.0",
-    "ora": "^2.0.0",
     "prismjs": "^1.11.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -36,7 +33,6 @@
     "react-remarkbox": "^0.0.2",
     "react-router-dom": "^4.2.2",
     "recompose": "^0.26.0",
-    "semver": "^5.5.0",
     "styled-components": "^2.4.0",
     "styled-normalize": "^4.0.0",
     "styled-tools": "^0.4.0"
