@@ -50,8 +50,8 @@ const Footer = () => (
 
         <Translate path={'footer.hostedOn'} />
 
-        <ExternalLink href={'https://pages.github.com/'}>
-          <Translate path={'footer.githubPages'} />
+        <ExternalLink href={'https://www.netlify.com/'}>
+          <Translate path={'footer.host'} />
         </ExternalLink>
       </Type.caption>
     </Content>

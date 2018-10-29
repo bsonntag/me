@@ -13,7 +13,7 @@ export default {
   },
   footer: {
     builtWith: 'Built with ',
-    githubPages: 'GitHub Pages',
+    host: 'Netlify',
     hostedOn: ' and hosted on ',
     react: 'React',
   },
