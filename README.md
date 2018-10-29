@@ -18,15 +18,6 @@ A local server for development can be run with `yarn start`.
 
 It will run on port 3000, so you can access it on http://localhost:3000.
 
-## Deployment
-
-To deploy the website I run `NODE_ENV=production yarn bundle`,
-which will bundle the html and assets into the dist folder.
-
-This folder is also a git repository which is a clone of
-[bsonntag/bsonntag.github.io](https://github.com/bsonntag/bsonntag.github.io),
-where my website is hosted.
-
 ## Contributing
 
 Please feel free to submit any issues or pull requests.
