@@ -1,4 +1,3 @@
-// @flow
 /* eslint-disable no-console */
 /* eslint-disable no-process-exit */
 
@@ -9,16 +8,11 @@ import Bluebird from 'bluebird';
 import dotenv from 'dotenv';
 import fs from 'fs';
 
-type Page = {
-  fileName: string,
-  path: string,
-};
-
 dotenv.config();
 
 const writeFile = Bluebird.promisify(fs.writeFile);
 
-const pages: Array<Page> = [
+const pages = [
   {
     fileName: 'index.html',
     path: '/',
@@ -39,7 +33,7 @@ const pages: Array<Page> = [
   ),
 ];
 
-const renderPage = (page: Page) => {
+const renderPage = page => {
   const html = `<!DOCTYPE html>${renderToString(renderClient(page.path))}`;
 
   return writeFile(`dist/${page.fileName}`, html);

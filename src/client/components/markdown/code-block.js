@@ -1,5 +1,3 @@
-// @flow
-
 import {
   codeFontFamily,
   codeStyle,
@@ -11,11 +9,6 @@ import {
 import { highlightCode } from 'client/utils/code';
 import React from 'react';
 import styled from 'styled-components';
-
-type Props = {
-  language: string,
-  value: string,
-};
 
 const Pre = styled.pre`
   background-color: ${colors.primary};
@@ -37,7 +30,7 @@ const renderInnerHtml = html => ({
   __html: html, // eslint-disable-line id-match
 });
 
-const CodeBlock = ({ language, value }: Props) => (
+const CodeBlock = ({ language, value }) => (
   <Pre>
     <Code dangerouslySetInnerHTML={renderInnerHtml(highlightCode(value, language))} />
   </Pre>

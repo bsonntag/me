@@ -1,39 +1,31 @@
-// @flow
-
-import type { BreakpointKey } from './breakpoints';
 import { css } from 'styled-components';
 import { get } from 'lodash';
 import { media } from './media';
 import { sortBreakpoints } from './breakpoints';
 import { units } from './units';
 
-export type Spacing = {
-  base: string | number,
-  [key: BreakpointKey]: string | number,
-};
-
-const large: Spacing = {
+const large = {
   base: units(5),
   sm: units(10),
   xs: units(8),
 };
 
-const medium: Spacing = {
+const medium = {
   base: units(2),
   sm: units(5),
   xs: units(4),
 };
 
-const small: Spacing = {
+const small = {
   base: units(1),
   sm: units(2),
 };
 
-const tiny: Spacing = {
+const tiny = {
   base: units(0.5),
 };
 
-const none: Spacing = {
+const none = {
   base: 0,
 };
 
@@ -45,7 +37,7 @@ export const spacing = {
   tiny,
 };
 
-const createSpacing = (...keys) => (value: string | Spacing) => {
+const createSpacing = (...keys) => value => {
   const {
     base,
     ...breakpoints

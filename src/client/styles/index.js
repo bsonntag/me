@@ -1,5 +1,3 @@
-// @flow
-
 export * from './breakpoints';
 export * from './code';
 export * from './colors';

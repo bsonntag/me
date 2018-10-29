@@ -10,8 +10,6 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: [
-    'flowtype',
-    'import',
     'react',
   ],
   rules: {
@@ -19,28 +17,9 @@ module.exports = {
       'error',
       'always-multiline',
     ],
-    'flowtype/boolean-style': 'error',
-    'flowtype/define-flow-type': 'error',
-    'flowtype/delimiter-dangle': [
-      'error',
-      'always-multiline',
-    ],
-    'flowtype/generic-spacing': 'error',
-    'flowtype/no-dupe-keys': 'error',
-    'flowtype/require-valid-file-annotation': [
-      'error',
-      'always',
-    ],
-    'flowtype/semi': 'error',
-    'flowtype/sort-keys': 'error',
-    'flowtype/space-after-type-colon': 'error',
-    'flowtype/space-before-generic-bracket': 'error',
-    'flowtype/union-intersection-spacing': 'error',
-    'flowtype/use-flow-type': 'error',
-    'import/no-duplicates': 'error',
     'jsx-quotes': ['error', 'prefer-single'],
     'no-confusing-arrow': 'off',
-    'no-duplicate-imports': 'off',
+    'no-duplicate-imports': 'error',
     'no-extra-parens': [
       'error',
       'all',
@@ -69,14 +48,9 @@ module.exports = {
     'react/no-direct-mutation-state': 'error',
     'react/no-unknown-property': 'error',
     'react/prefer-es6-class': 'error',
-    'react/prop-types': 'error',
+    'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'error',
     'react/self-closing-comp': 'error',
     'react/sort-prop-types': 'error',
-  },
-  settings: {
-    flowtype: {
-      onlyFilesWithFlowAnnotation: true,
-    },
   },
 };

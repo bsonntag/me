@@ -1,5 +1,3 @@
-// @flow
-
 const black = '#000000';
 const white = '#ffffff';
 

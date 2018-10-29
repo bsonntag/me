@@ -1,5 +1,3 @@
-// @flow
-
 import { Helmet } from 'react-helmet';
 import { ScrollRestoration } from 'client/components/routing';
 import { Translator } from 'client/containers/translations';

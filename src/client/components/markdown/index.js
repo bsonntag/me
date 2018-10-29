@@ -1,5 +1,3 @@
-// @flow
-
 import { ExternalLink } from 'client/components/links';
 import { Fragment } from 'react';
 import { withProps } from 'recompose';

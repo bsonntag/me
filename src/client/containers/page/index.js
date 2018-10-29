@@ -1,15 +1,8 @@
-// @flow
-
-import type { Node } from 'react';
 import { colors, padding } from 'client/styles';
 import Footer from './footer';
 import Header from './header';
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-
-type Props = {
-  children: Node,
-};
 
 const Content = styled.main`
   color: ${colors.textColor};
@@ -19,7 +12,7 @@ const Content = styled.main`
   ${padding('large')}
 `;
 
-const Page = ({ children }: Props) => (
+const Page = ({ children }) => (
   <Fragment>
     <Header />
 

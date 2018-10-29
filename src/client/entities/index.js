@@ -1,9 +1,6 @@
-// @flow
-
-import type { SocialNetwork } from 'client/types';
 import Icon from 'client/components/icon';
 
-const socialNetworks: Array<SocialNetwork> = [{
+const socialNetworks = [{
   Icon: Icon.github,
   key: 'github',
   url: 'https://github.com/bsonntag',

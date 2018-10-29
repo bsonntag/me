@@ -1,7 +1,4 @@
-// @flow
-
 import { ExternalLink } from 'client/components/links';
-import type { SocialNetwork } from 'client/types';
 import { margin, units } from 'client/styles';
 import React from 'react';
 import entities from 'client/entities';
@@ -23,20 +20,20 @@ const Container = styled.div`
   }
 `;
 
-const renderSocialNetwork = ({ Icon, key, url }: SocialNetwork) => {
-  return (
-    <ScallingLink
-      href={url}
-      key={key}
-    >
-      <Icon size={units(4)} />
-    </ScallingLink>
-  );
-};
+const SocialNetwork = ({ Icon, key, url }) => (
+  <ScallingLink
+    href={url}
+    key={key}
+  >
+    <Icon size={units(4)} />
+  </ScallingLink>
+);
 
 const SocialNetworks = () => (
   <Container>
-    {entities.socialNetworks.map(renderSocialNetwork)}
+    {entities.socialNetworks.map(socialNetwork => (
+      <SocialNetwork {...socialNetwork} />
+    ))}
   </Container>
 );
 

@@ -1,5 +1,3 @@
-// @flow
-
 import { codeFontFamily, colors, padding } from 'client/styles';
 import styled from 'styled-components';
 

@@ -1,5 +1,3 @@
-// @flow
-
 import { Route } from 'react-router-dom';
 import PropWillChange from 'client/components/prop-will-change';
 import React from 'react';

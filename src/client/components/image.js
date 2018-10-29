@@ -1,5 +1,3 @@
-// @flow
-
 import { ifProp, prop } from 'styled-tools';
 import styled from 'styled-components';
 

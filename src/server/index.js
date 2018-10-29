@@ -1,4 +1,3 @@
-// @flow
 /* eslint-disable no-console */
 
 import { renderClient } from 'client';

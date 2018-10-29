@@ -1,5 +1,3 @@
-// @flow
-
 const prismColors = {
   boolean: '#ff8b50',
   char: '#d8dee9',

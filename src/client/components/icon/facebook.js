@@ -1,11 +1,8 @@
-// @flow
-
-import type { IconProps } from './types';
 import { colors } from 'client/styles';
 import React from 'react';
 import Svg from './svg';
 
-const Facebook = (props: IconProps) => (
+const Facebook = props => (
   <Svg
     version={'1.1'}
     viewBox={'0 0 167.657 167.657'}

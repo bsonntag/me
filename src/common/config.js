@@ -1,4 +1,3 @@
-// @flow
 /* eslint-disable no-process-env */
 
 export default {
