@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet';
 import { ScrollRestoration } from 'client/components/routing';
 import { Translator } from 'client/containers/translations';
+import GlobalStyle from 'client/components/global-style';
 import Page from 'client/containers/page';
 import React from 'react';
 import Routes from 'client/containers/routes';
@@ -27,6 +28,8 @@ const App = () => (
         </Helmet>
       )}
     </Translator>
+
+    <GlobalStyle />
 
     <ScrollRestoration />
 

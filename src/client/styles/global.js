@@ -1,8 +1,8 @@
+import { css } from 'styled-components';
 import { defaultFontSize } from './typography';
-import { injectGlobal } from 'styled-components';
 import normalize from 'styled-normalize';
 
-export const injectGlobalStyles = () => injectGlobal`
+export const globalStyle = css`
   ${normalize}
 
   @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
