@@ -19,7 +19,7 @@
     "react-helmet": "^5.2.0",
     "react-markdown": "^3.3.0",
     "react-remarkbox": "^0.0.2",
-    "recompose": "^0.26.0",
+    "recompose": "^0.30.0",
     "styled-components": "^4.0.2",
     "styled-normalize": "^8.0.3",
     "styled-tools": "^1.5.2"
