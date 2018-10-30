@@ -3,34 +3,33 @@
   "version": "0.2.1",
   "private": true,
   "description": "My personal website",
+  "repository": "https://github.com/bsonntag/bsonntag.github.io",
   "license": "UNLICENSED",
   "author": "Benjamim Sonntag <benjamimsonntag@gmail.com>",
   "main": "./src/index.js",
-  "repository": "https://github.com/bsonntag/bsonntag.github.io",
   "scripts": {
     "bundle": "gatsby build",
     "lint": "eslint .",
     "start": "gatsby develop"
   },
   "dependencies": {
-    "prismjs": "^1.11.0",
+    "lodash": "^4.17.11",
+    "prismjs": "^1.15.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-helmet": "^5.2.0",
-    "react-markdown": "^3.3.0",
+    "react-markdown": "^4.0.3",
     "react-remarkbox": "^0.0.2",
-    "react-router-dom": "^4.2.2",
-    "recompose": "^0.26.0",
+    "recompose": "^0.30.0",
     "styled-components": "^4.0.2",
     "styled-normalize": "^8.0.3",
     "styled-tools": "^1.5.2"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.8.0",
-    "eslint": "^4.12.1",
-    "eslint-config-seegno": "^10.0.0",
-    "eslint-plugin-react": "^7.7.0",
-    "gatsby": "^2.0.19",
+    "eslint": "^5.8.0",
+    "eslint-config-seegno": "^11.0.1",
+    "gatsby": "^2.0.34",
     "gatsby-image": "^2.0.15",
     "gatsby-plugin-manifest": "^2.0.5",
     "gatsby-plugin-offline": "^2.0.5",
@@ -38,8 +37,8 @@
     "gatsby-plugin-sharp": "^2.0.10",
     "gatsby-plugin-styled-components": "^3.0.0",
     "gatsby-source-filesystem": "^2.0.4",
-    "gatsby-transformer-remark": "^2.1.10",
-    "gatsby-transformer-sharp": "^2.1.6",
-    "sort-package-json": "^1.11.0"
+    "gatsby-transformer-remark": "^2.1.11",
+    "gatsby-transformer-sharp": "^2.1.7",
+    "sort-package-json": "^1.16.0"
   }
 }
