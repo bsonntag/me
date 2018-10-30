@@ -9,7 +9,7 @@ const heading = {
   fontSize: 34,
   fontWeight: 'normal',
   lineHeight: 40,
-  marginBottom: margin.bottom('medium'),
+  margin: margin.bottom('medium'),
 };
 
 const title = {
@@ -17,7 +17,10 @@ const title = {
   fontSize: 24,
   fontWeight: 'bold',
   lineHeight: 32,
-  marginBottom: margin.bottom('small'),
+  margin: css`
+    ${margin.bottom('small')}
+    ${margin.top('medium')}
+  `,
 };
 
 const subheading = {
@@ -25,6 +28,7 @@ const subheading = {
   fontSize: 20,
   fontWeight: 'normal',
   lineHeight: 24,
+  margin: margin.vertical('small'),
 };
 
 const paragraph = {
@@ -33,6 +37,7 @@ const paragraph = {
   fontSize: defaultFontSize,
   fontWeight: 'normal',
   lineHeight: 24,
+  margin: margin.bottom('small'),
 };
 
 const caption = {
@@ -48,14 +53,14 @@ export const createTypeStyle = ({
   fontSize,
   fontWeight,
   lineHeight,
-  marginBottom,
+  margin,
 }) => css`
   font-size: ${fontSize}px;
   font-weight: ${fontWeight};
   line-height: ${round(lineHeight / fontSize, 5)}em;
 
   ${fontFamily ? `font-family: ${fontFamily};` : ''}
-  ${marginBottom}
+  ${margin}
 `;
 
 export const typography = {
