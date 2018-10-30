@@ -52,7 +52,7 @@ const Home = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       totalCount
       edges {
         node {
