@@ -3,11 +3,10 @@ import { resolve } from 'url';
 import { translate } from 'locales';
 import React from 'react';
 import ben from 'images/ben.jpg';
-import config from 'config';
 
 const titleTemplatePrefix = '%s - ';
 
-const Metatags = () => (
+const Metatags = ({ baseUrl }) => (
   <Helmet
     defaultTitle={translate('meta.title')}
     titleTemplate={titleTemplatePrefix + translate('meta.title')}
@@ -23,7 +22,7 @@ const Metatags = () => (
     />
 
     <meta
-      content={resolve(config.baseUrl, ben)}
+      content={resolve(baseUrl, ben)}
       property={'og:image'}
     />
 

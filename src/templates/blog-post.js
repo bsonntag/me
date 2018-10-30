@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import { ifProp } from 'styled-tools';
 import { margin } from 'styles';
 import { renderDate } from 'utils/date';
+import { resolve } from 'url';
 import { translate } from 'locales';
 import CommentBox from 'components/comment-box';
 import Markdown from 'components/markdown';
@@ -11,7 +12,6 @@ import PageLayout from 'components/page-layout';
 import React, { Fragment } from 'react';
 import Share from 'components/share';
 import Type from 'components/type';
-import config from 'config';
 import styled, { css } from 'styled-components';
 
 const getFirstParagraph = compose(
@@ -44,12 +44,13 @@ const CommentsTitle = styled(Type.subheading)`
 `;
 
 const BlogPost = ({ data, location }) => {
+  const { baseUrl, remarkboxKey } = data.site.siteMetadata;
   const { frontmatter, rawMarkdownBody } = data.markdownRemark;
   const { date, title } = frontmatter;
-  const hasCommentSection = !!config.remarkboxKey;
+  const hasCommentSection = !!remarkboxKey;
 
   return (
-    <PageLayout>
+    <PageLayout baseUrl={baseUrl}>
       <article>
         <Helmet>
           <title>
@@ -76,7 +77,7 @@ const BlogPost = ({ data, location }) => {
       <StyledShare
         hasCommentSection={hasCommentSection}
         label={translate('blogPost.share')}
-        url={config.baseUrl + location.pathname}
+        url={baseUrl + location.pathname}
       />
 
       {hasCommentSection && (
@@ -86,9 +87,9 @@ const BlogPost = ({ data, location }) => {
           </CommentsTitle>
 
           <CommentBox
-            remarkboxKey={config.remarkboxKey}
+            remarkboxKey={remarkboxKey}
             threadFragment={location.hash}
-            threadUri={config.baseUrl + location.pathname}
+            threadUri={resolve(baseUrl, location.pathname)}
           />
         </Fragment>
       )}
@@ -104,6 +105,12 @@ export const pageQuery = graphql`
         title
       }
       rawMarkdownBody
+    }
+    site {
+      siteMetadata {
+        baseUrl
+        remarkboxKey
+      }
     }
   }
 `;

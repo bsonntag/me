@@ -22,7 +22,7 @@ const Home = ({ data }) => {
   }));
 
   return (
-    <PageLayout>
+    <PageLayout baseUrl={data.site.siteMetadata.baseUrl}>
       <Type.heading>
         {translate('home.heading')}
       </Type.heading>
@@ -71,6 +71,11 @@ export const query = graphql`
             path
           }
         }
+      }
+    }
+    site {
+      siteMetadata {
+        baseUrl
       }
     }
   }

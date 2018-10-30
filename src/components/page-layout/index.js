@@ -14,9 +14,9 @@ const Content = styled.main`
   ${padding('large')}
 `;
 
-const PageLayout = ({ children }) => (
+const PageLayout = ({ baseUrl, children }) => (
   <Fragment>
-    <Metatags />
+    <Metatags baseUrl={baseUrl} />
 
     <GlobalStyle />
 
