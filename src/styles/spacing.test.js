@@ -21,6 +21,19 @@ describe('spacing', () => {
       expect(foo('bar')).toEqual(expected);
     });
 
+    it('should create spacings creators for each specified property name', () => {
+      const foo = createSpacing(['foo', 'bar'], {
+        baz: { base: '1px' },
+      });
+
+      const expected = expect.arrayContaining([
+        'foo: 1px;',
+        'bar: 1px;',
+      ]);
+
+      expect(foo('baz')).toEqual(expected);
+    });
+
     it('should create spacings creators that accept custom values', () => {
       const foo = createSpacing(['foo'], {});
 

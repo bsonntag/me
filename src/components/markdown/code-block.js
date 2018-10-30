@@ -7,6 +7,7 @@ import {
 } from 'styles';
 
 import { highlightCode } from 'utils/code';
+import { renderInnerHtml } from 'utils/html';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -25,10 +26,6 @@ const Pre = styled.pre`
 const Code = styled.code`
   ${codeStyle}
 `;
-
-const renderInnerHtml = html => ({
-  __html: html, // eslint-disable-line id-match
-});
 
 const CodeBlock = ({ language, value }) => (
   <Pre>
