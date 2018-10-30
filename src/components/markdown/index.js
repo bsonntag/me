@@ -1,4 +1,4 @@
-import { ExternalLink } from 'components/links';
+import { ExternalLink } from 'components/links/external';
 import { Fragment } from 'react';
 import { withProps } from 'recompose';
 import CodeBlock from './code-block';
