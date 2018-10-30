@@ -1,5 +1,5 @@
 import { units } from 'styles';
-import Icon from 'components/icon';
+import LinkIcon from 'components/icon/link';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -38,7 +38,7 @@ export const HeadingLink = ({ children, href }) => (
     <AnchorContainer aria-hidden>
       <a href={href}>
         <div>
-          <Icon.link size={units(2)} />
+          <LinkIcon size={units(2)} />
         </div>
       </a>
     </AnchorContainer>

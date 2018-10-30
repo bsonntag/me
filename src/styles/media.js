@@ -6,9 +6,9 @@ function createMediaQuery(boundType, compensation = 0) {
   return breakpoint => `@media (${boundType}: ${breakpoint + compensation}px)`;
 }
 
-const maxWidth = createMediaQuery('max-width', -1);
+export const maxWidth = createMediaQuery('max-width', -1);
 
-const minWidth = createMediaQuery('min-width');
+export const minWidth = createMediaQuery('min-width');
 
 const createMediaQueries = createQuery => compose(
   mapValues(mediaQuery => (...args) => css`

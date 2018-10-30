@@ -37,7 +37,7 @@ export const spacing = {
   tiny,
 };
 
-const createSpacing = (...keys) => value => {
+export const createSpacing = (keys, spacing) => value => {
   const {
     base,
     ...breakpoints
@@ -64,24 +64,24 @@ const createSpacing = (...keys) => value => {
   `;
 };
 
-const padding = createSpacing('padding');
+const padding = createSpacing(['padding'], spacing);
 
-padding.bottom = createSpacing('padding-bottom');
-padding.left = createSpacing('padding-left');
-padding.right = createSpacing('padding-right');
-padding.top = createSpacing('padding-top');
+padding.bottom = createSpacing(['padding-bottom'], spacing);
+padding.left = createSpacing(['padding-left'], spacing);
+padding.right = createSpacing(['padding-right'], spacing);
+padding.top = createSpacing(['padding-top'], spacing);
 
-padding.horizontal = createSpacing('padding-left', 'padding-right');
-padding.vertical = createSpacing('padding-bottom', 'padding-top');
+padding.horizontal = createSpacing(['padding-left', 'padding-right'], spacing);
+padding.vertical = createSpacing(['padding-bottom', 'padding-top'], spacing);
 
-const margin = createSpacing('margin');
+const margin = createSpacing(['margin'], spacing);
 
-margin.bottom = createSpacing('margin-bottom');
-margin.left = createSpacing('margin-left');
-margin.right = createSpacing('margin-right');
-margin.top = createSpacing('margin-top');
+margin.bottom = createSpacing(['margin-bottom'], spacing);
+margin.left = createSpacing(['margin-left'], spacing);
+margin.right = createSpacing(['margin-right'], spacing);
+margin.top = createSpacing(['margin-top'], spacing);
 
-margin.horizontal = createSpacing('margin-left', 'margin-right');
-margin.vertical = createSpacing('margin-bottom', 'margin-top');
+margin.horizontal = createSpacing(['margin-left', 'margin-right'], spacing);
+margin.vertical = createSpacing(['margin-bottom', 'margin-top'], spacing);
 
 export { margin, padding };

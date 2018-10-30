@@ -10,7 +10,34 @@
   "scripts": {
     "bundle": "gatsby build",
     "lint": "eslint .",
-    "start": "gatsby develop"
+    "start": "gatsby develop",
+    "test": "jest",
+    "test:watch": "jest --watch --notify"
+  },
+  "jest": {
+    "coverageDirectory": "coverage",
+    "coveragePathIgnorePatterns": [
+      "jest-setup.js"
+    ],
+    "coverageReporters": [
+      "html",
+      "lcov",
+      "text"
+    ],
+    "globals": {
+      "__PATH_PREFIX__": ""
+    },
+    "setupTestFrameworkScriptFile": "./jest-setup.js",
+    "testPathIgnorePatterns": [
+      "node_modules",
+      ".cache"
+    ],
+    "transform": {
+      "^.+\\.js?$": "./jest-preprocess.js"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!(gatsby)/)"
+    ]
   },
   "dependencies": {
     "lodash": "^4.17.11",
@@ -26,6 +53,10 @@
     "styled-tools": "^1.5.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "babel-core": "^7.0.0-bridge",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-styled-components": "^1.8.0",
     "eslint": "^5.8.0",
     "eslint-config-seegno": "^11.0.1",
@@ -39,6 +70,10 @@
     "gatsby-source-filesystem": "^2.0.4",
     "gatsby-transformer-remark": "^2.1.11",
     "gatsby-transformer-sharp": "^2.1.7",
+    "jest": "^23.6.0",
+    "jest-dom": "^2.1.0",
+    "jest-styled-components": "^6.2.2",
+    "react-testing-library": "^5.2.3",
     "sort-package-json": "^1.16.0"
   }
 }

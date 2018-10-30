@@ -1,4 +1,4 @@
-import { HeadingLink } from 'components/links';
+import { HeadingLink } from 'components/links/heading';
 import { kebabCase } from 'lodash';
 import { margin } from 'styles';
 import React from 'react';

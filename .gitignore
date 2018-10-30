@@ -1,5 +1,6 @@
 .cache
 .env*
+coverage
 node_modules
 package-lock.json
 /public
