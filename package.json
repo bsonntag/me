@@ -14,11 +14,11 @@
   },
   "dependencies": {
     "lodash": "^4.17.11",
-    "prismjs": "^1.11.0",
+    "prismjs": "^1.15.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-helmet": "^5.2.0",
-    "react-markdown": "^3.3.0",
+    "react-markdown": "^4.0.3",
     "react-remarkbox": "^0.0.2",
     "recompose": "^0.30.0",
     "styled-components": "^4.0.2",
