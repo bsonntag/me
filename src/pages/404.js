@@ -1,4 +1,4 @@
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import { translate } from 'locales';
 import PageLayout from 'components/page-layout';
 import React from 'react';
@@ -13,8 +13,8 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const NotFound = () => (
-  <PageLayout>
+const NotFound = ({ data }) => (
+  <PageLayout baseUrl={data.site.siteMetadata.baseUrl} >
     <Container>
       <Type.heading>
         {translate('notFound.title')}
@@ -30,5 +30,15 @@ const NotFound = () => (
     </Container>
   </PageLayout>
 );
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        baseUrl
+      }
+    }
+  }
+`;
 
 export default NotFound;
