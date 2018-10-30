@@ -3,10 +3,10 @@
   "version": "0.2.1",
   "private": true,
   "description": "My personal website",
+  "repository": "https://github.com/bsonntag/bsonntag.github.io",
   "license": "UNLICENSED",
   "author": "Benjamim Sonntag <benjamimsonntag@gmail.com>",
   "main": "./src/index.js",
-  "repository": "https://github.com/bsonntag/bsonntag.github.io",
   "scripts": {
     "bundle": "gatsby build",
     "lint": "eslint .",
@@ -39,6 +39,6 @@
     "gatsby-source-filesystem": "^2.0.4",
     "gatsby-transformer-remark": "^2.1.10",
     "gatsby-transformer-sharp": "^2.1.6",
-    "sort-package-json": "^1.11.0"
+    "sort-package-json": "^1.16.0"
   }
 }
