@@ -4,7 +4,7 @@ import { get } from 'lodash';
 class PropWillChange extends Component {
 
   componentWillReceiveProps(nextProps) {
-    const { propName, onChange } = nextProps;
+    const { onChange, propName } = nextProps;
 
     const newValue = get(nextProps, propName);
     const oldValue = get(this.props, propName);

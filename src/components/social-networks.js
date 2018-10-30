@@ -42,8 +42,11 @@ const SocialNetwork = ({ Icon, url }) => (
 
 const SocialNetworks = () => (
   <Container>
-    {socialNetworks.map(socialNetwork => (
-      <SocialNetwork {...socialNetwork} />
+    {socialNetworks.map(({ key, ...rest }) => (
+      <SocialNetwork
+        key={key}
+        {...rest}
+      />
     ))}
   </Container>
 );
