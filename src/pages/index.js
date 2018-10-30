@@ -1,17 +1,9 @@
 import { graphql } from 'gatsby';
-import { margin } from 'styles';
 import { translate } from 'locales';
 import Blog from 'components/home/blog';
 import PageLayout from 'components/page-layout';
 import React from 'react';
 import Type from 'components/type';
-import styled from 'styled-components';
-
-const Section = styled.div`
-  &:not(:last-child) {
-    ${margin.bottom('medium')}
-  }
-`;
 
 const Home = ({ data }) => {
   const posts = data.allMarkdownRemark.edges.map(({ node }) => ({
@@ -27,7 +19,7 @@ const Home = ({ data }) => {
         {translate('home.heading')}
       </Type.heading>
 
-      <Section>
+      <section>
         <Type.title>
           {translate('home.whatIDo.title')}
         </Type.title>
@@ -35,9 +27,9 @@ const Home = ({ data }) => {
         <Type.paragraph raw>
           {translate('home.whatIDo.description')}
         </Type.paragraph>
-      </Section>
+      </section>
 
-      <Section>
+      <section>
         <Type.title>
           {translate('home.work.title')}
         </Type.title>
@@ -45,13 +37,13 @@ const Home = ({ data }) => {
         <Type.paragraph raw>
           {translate('home.work.description')}
         </Type.paragraph>
-      </Section>
+      </section>
 
-      <Section>
+      <section>
         <Type.title>
           {translate('home.blog.title')}
         </Type.title>
-      </Section>
+      </section>
 
       <Blog posts={posts} />
     </PageLayout>
