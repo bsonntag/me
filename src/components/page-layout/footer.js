@@ -42,8 +42,8 @@ const Footer = () => (
       <Type.caption>
         {translate('footer.builtWith')}
 
-        <ExternalLink href={'https://reactjs.org/'}>
-          {translate('footer.react')}
+        <ExternalLink href={'https://www.gatsbyjs.org/'}>
+          {translate('footer.tech')}
         </ExternalLink>
 
         {translate('footer.hostedOn')}

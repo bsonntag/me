@@ -13,7 +13,7 @@ export default {
     builtWith: 'Built with ',
     host: 'Netlify',
     hostedOn: ' and hosted on ',
-    react: 'React',
+    tech: 'Gatsby',
   },
   home: {
     blog: {
