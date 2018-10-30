@@ -1,5 +1,6 @@
 import { createTypeStyle, typography } from 'styles';
 import { reduce } from 'lodash';
+import { renderInnerHtml } from 'utils/html';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -11,11 +12,9 @@ const createTypeComponent = (name, { element, ...typeConfig }) => {
   const Type = ({ children, raw, ...rest }) => {
     const props = {
       ...rest,
-      ...raw ? {
-        dangerouslySetInnerHTML: {
-          __html: children, // eslint-disable-line id-match
-        },
-      } : { children },
+      ...!raw ? { children } : {
+        dangerouslySetInnerHTML: renderInnerHtml(children),
+      },
     };
 
     return <StyledTypeElement {...props} />;
