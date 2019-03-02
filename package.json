@@ -76,6 +76,6 @@
     "jest-styled-components": "^6.2.2",
     "lint-staged": "^8.1.5",
     "react-testing-library": "^5.2.3",
-    "sort-package-json": "^1.16.0"
+    "sort-package-json": "^1.20.0"
   }
 }

@@ -12791,10 +12791,10 @@ sort-object-keys@^1.1.2:
   resolved "https://registry.yarnpkg.com/sort-object-keys/-/sort-object-keys-1.1.2.tgz#d3a6c48dc2ac97e6bc94367696e03f6d09d37952"
   integrity sha1-06bEjcKsl+a8lDZ2luA/bQnTeVI=
 
-sort-package-json@^1.16.0:
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/sort-package-json/-/sort-package-json-1.16.0.tgz#087f5ce05b6faca373312e7124918e0d68492d7b"
-  integrity sha512-QFJNxdpp7zZgSkmAIaMrteqqxGP4TkooKrGtslM2qYiML92PTYDOFOk+lG+TdvJzjheD502UFIys2qSvQljKaw==
+sort-package-json@^1.20.0:
+  version "1.20.0"
+  resolved "https://registry.yarnpkg.com/sort-package-json/-/sort-package-json-1.20.0.tgz#b2407ac5e7d0b4ed01a66c99b9ab9dd1b505c7ed"
+  integrity sha512-xrclPt/C0hiMPUBEshjWJ4dcqCqP1RcZMI2VsUqPe5f4V39Lach4xITARMH3H0WnrO/T5LeqYVocCWRg6YoWfw==
   dependencies:
     detect-indent "^5.0.0"
     sort-object-keys "^1.1.2"
