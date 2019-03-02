@@ -79,20 +79,8 @@
     "jest": "^23.6.0",
     "jest-dom": "^2.1.0",
     "jest-styled-components": "^6.2.2",
-    "lint-staged": "^8.0.4",
+    "lint-staged": "^8.1.5",
     "react-testing-library": "^5.2.3",
     "sort-package-json": "^1.16.0"
-  },
-  "lint-staged": {
-    "linters": {
-      "*.js": [
-        "eslint --fix",
-        "git add"
-      ],
-      "package.json": [
-        "sort-package-json",
-        "git add"
-      ]
-    }
   }
 }
