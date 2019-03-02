@@ -11,7 +11,7 @@ module.exports = {
     'no-confusing-arrow': 'off',
     'switch-case/newline-between-switch-case': [
       'error',
-      'never'
+      'never',
     ],
   },
 };
