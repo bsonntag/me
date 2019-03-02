@@ -1,11 +1,10 @@
 import { ExternalLink } from 'components/links/external';
-import { Fragment } from 'react';
-import { withProps } from 'recompose';
 import CodeBlock from './code-block';
 import Heading from './heading';
 import Html from './html';
 import InlineCode from './inline-code';
-import Markdown from 'react-markdown';
+import React, { Fragment } from 'react';
+import ReactMarkdown from 'react-markdown';
 import Type from 'components/type';
 
 const renderers = {
@@ -18,4 +17,11 @@ const renderers = {
   root: Fragment,
 };
 
-export default withProps({ renderers })(Markdown);
+const Markdown = props => (
+  <ReactMarkdown
+    {...props}
+    renderers={renderers}
+  />
+);
+
+export default Markdown;
