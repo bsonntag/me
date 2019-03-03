@@ -26,4 +26,10 @@ export const globalStyle = css`
   h1, h2, h3, h4, p {
     margin: 0;
   }
+
+  ol, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 `;
