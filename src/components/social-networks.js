@@ -26,29 +26,33 @@ const ScallingLink = styled(ExternalLink)`
   }
 `;
 
-const Container = styled.div`
+const List = styled.ul`
   display: flex;
+`;
 
-  > :not(:last-child) {
+const ListItem = styled.li`
+  &:not(:last-child) {
     ${margin.right('small')}
   }
 `;
 
 const SocialNetwork = ({ Icon, url }) => (
-  <ScallingLink href={url}>
-    <Icon size={units(4)} />
-  </ScallingLink>
+  <ListItem>
+    <ScallingLink href={url}>
+      <Icon size={units(4)} />
+    </ScallingLink>
+  </ListItem>
 );
 
 const SocialNetworks = () => (
-  <Container>
+  <List>
     {socialNetworks.map(({ key, ...rest }) => (
       <SocialNetwork
         key={key}
         {...rest}
       />
     ))}
-  </Container>
+  </List>
 );
 
 export default SocialNetworks;
