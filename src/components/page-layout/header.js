@@ -1,5 +1,6 @@
 import { UnstyledLink } from 'components/links';
-import { colors, margin, media, padding, units } from 'styles';
+import { colors, media, units } from 'styles';
+import { gridGap, margin, padding } from 'styles/spacing';
 import { translate } from 'locales';
 import Image from 'components/image';
 import React from 'react';
@@ -9,57 +10,47 @@ import ben from 'images/ben.jpg';
 import styled from 'styled-components';
 
 const Container = styled.header`
-  align-items: center;
   background-color: ${colors.primary};
   color: ${colors.alternateTextColor};
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  justify-items: center;
 
+  ${gridGap('medium')}
   ${padding('large')}
 
-  > :not(:last-child) {
-    ${margin.bottom('medium')}
-  }
-
   ${media.min.sm`
-    flex-direction: row;
+    grid-template-columns: auto auto;
     justify-content: center;
-
-    > :not(:last-child) {
-      ${margin.bottom('none')}
-      ${margin.right('medium')}
-    }
+    justify-items: initial;
   `}
 `;
 
-const InfoContainer = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+const Avatar = styled(Image)`
+  grid-row: span 2;
+`;
 
-  ${media.min.sm`
-    align-items: flex-start;
-  `}
+const Heading = styled(Type.heading)`
+  align-self: end;
+
+  ${margin.bottom('none')}
 `;
 
 const Header = () => (
   <Container>
-    <Image
+    <Avatar
+      alt={translate('header.avatarAlt')}
       round
       size={units(15)}
       src={ben}
     />
 
-    <InfoContainer>
-      <Type.heading>
-        <UnstyledLink to={'/'}>
-          {translate('name')}
-        </UnstyledLink>
-      </Type.heading>
+    <Heading>
+      <UnstyledLink to={'/'}>
+        {translate('name')}
+      </UnstyledLink>
+    </Heading>
 
-      <SocialNetworks />
-    </InfoContainer>
+    <SocialNetworks />
   </Container>
 );
 
