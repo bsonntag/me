@@ -1,5 +1,5 @@
 import { ExternalLink } from 'components/links';
-import { margin, units } from 'styles';
+import { spacing } from 'styles/spacing';
 import Icon from 'components/icon';
 import React from 'react';
 import styled from 'styled-components';
@@ -23,24 +23,26 @@ const ScallingLink = styled(ExternalLink)`
   transition: transform 200ms ease-in-out;
 
   &:focus, &:hover {
-    transform: scale(1.2);
+    transform: scale(1.4);
   }
 `;
 
 const List = styled.ul`
+  align-items: center;
   display: flex;
+  height: ${spacing.medium};
 `;
 
 const ListItem = styled.li`
   &:not(:last-child) {
-    ${margin.right('small')}
+    margin-right: ${spacing.small};
   }
 `;
 
 const SocialNetwork = ({ Icon, url }) => (
   <ListItem>
     <ScallingLink href={url}>
-      <Icon size={units(4)} />
+      <Icon size={'2rem'} />
     </ScallingLink>
   </ListItem>
 );

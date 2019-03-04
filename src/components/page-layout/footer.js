@@ -1,8 +1,9 @@
+import { Caption } from 'components/typography';
 import { ExternalLink, Link } from 'components/links';
-import { colors, margin, padding } from 'styles';
+import { contentSize, spacing } from 'styles/spacing';
 import { translate } from 'locales';
 import React from 'react';
-import Type from 'components/type';
+import colors from 'styles/colors';
 import styled from 'styled-components';
 
 const renderCopyright = () => `© ${new Date().getFullYear()} `;
@@ -10,9 +11,9 @@ const renderCopyright = () => `© ${new Date().getFullYear()} `;
 const Container = styled.footer`
   color: ${colors.textColor};
   margin: 0 auto;
-  max-width: 1200px;
-
-  ${padding.horizontal('large')}
+  max-width: ${contentSize}rem;
+  padding-left: ${spacing.small};
+  padding-right: ${spacing.small};
 `;
 
 const Content = styled.div`
@@ -20,26 +21,26 @@ const Content = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-
-  ${padding.vertical('large')}
+  padding-bottom: ${spacing.large};
+  padding-top: ${spacing.large};
 
   > :not(:last-child) {
-    ${margin.right('small')}
+    margin-right: ${spacing.small};
   }
 `;
 
 const Footer = () => (
   <Container>
     <Content>
-      <Type.caption>
+      <Caption>
         {renderCopyright()}
 
         <Link to={'/'}>
           {translate('name')}
         </Link>
-      </Type.caption>
+      </Caption>
 
-      <Type.caption>
+      <Caption>
         {translate('footer.builtWith')}
 
         <ExternalLink href={'https://www.gatsbyjs.org/'}>
@@ -51,7 +52,7 @@ const Footer = () => (
         <ExternalLink href={'https://www.netlify.com/'}>
           {translate('footer.host')}
         </ExternalLink>
-      </Type.caption>
+      </Caption>
     </Content>
   </Container>
 );

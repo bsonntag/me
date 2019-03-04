@@ -1,22 +1,22 @@
+import { Heading, SubTitle, Title } from 'components/typography';
 import { HeadingLink } from 'components/links/heading';
 import { kebabCase } from 'lodash';
 import React from 'react';
-import Type from 'components/type';
 
 function getComponent(level) {
   switch (level) {
     case 1:
-      return Type.heading;
+      return Heading;
     case 2:
-      return Type.title;
+      return Title;
     case 3:
-      return Type.subheading;
+      return SubTitle;
     default:
       return `h${level}`;
   }
 }
 
-const Heading = ({ children, level }) => {
+const MarkdownHeading = ({ children, level }) => {
   const id = kebabCase(children);
   const url = `#${id}`;
   const Component = getComponent(level);
@@ -30,4 +30,4 @@ const Heading = ({ children, level }) => {
   );
 };
 
-export default Heading;
+export default MarkdownHeading;

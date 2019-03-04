@@ -1,26 +1,26 @@
-import {
-  codeFontFamily,
-  codeStyle,
-  colors,
-  margin,
-  padding,
-} from 'styles';
-
+import { codeFontFamily, codeStyle } from 'styles/code';
+import { contentSize, spacing } from 'styles/spacing';
 import { highlightCode } from 'utils/code';
 import { renderInnerHtml } from 'utils/html';
+import { smallFontSize } from 'styles/typography';
 import React from 'react';
+import colors from 'styles/colors';
 import styled from 'styled-components';
 
-const Pre = styled.pre`
+const Container = styled.div`
   background-color: ${colors.primary};
-  border-radius: 4px;
-  color: ${colors.white};
-  font-family: ${codeFontFamily};
-  max-width: 100%;
+  margin: ${spacing.small} -${spacing.small};
   overflow-x: auto;
 
-  ${margin.vertical('small')}
-  ${padding('small')}
+  @media screen and (min-width: ${smallFontSize * contentSize + 1}px) {
+    border-radius: 4px;
+  }
+`;
+
+const Pre = styled.pre`
+  color: ${colors.white};
+  font-family: ${codeFontFamily};
+  padding: ${spacing.small};
 `;
 
 const Code = styled.code`
@@ -28,9 +28,11 @@ const Code = styled.code`
 `;
 
 const CodeBlock = ({ language, value }) => (
-  <Pre>
-    <Code dangerouslySetInnerHTML={renderInnerHtml(highlightCode(value, language))} />
-  </Pre>
+  <Container>
+    <Pre>
+      <Code dangerouslySetInnerHTML={renderInnerHtml(highlightCode(value, language))} />
+    </Pre>
+  </Container>
 );
 
 export default CodeBlock;

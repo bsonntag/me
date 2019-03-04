@@ -6,7 +6,3 @@ export const breakpoints = {
   xs: 480,
   xxs: 320,
 };
-
-export const sortBreakpoints = keys => {
-  return keys.sort((first, second) => breakpoints[first] - breakpoints[second]);
-};

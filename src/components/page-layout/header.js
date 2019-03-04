@@ -1,27 +1,29 @@
+import { Heading } from 'components/typography';
 import { UnstyledLink } from 'components/links';
-import { colors, media, units } from 'styles';
-import { gridGap, margin, padding } from 'styles/spacing';
+import { lines, spacing } from 'styles/spacing';
+import { media } from 'styles/media';
 import { translate } from 'locales';
 import Image from 'components/image';
 import React from 'react';
 import SocialNetworks from 'components/social-networks';
-import Type from 'components/type';
 import ben from 'images/ben.jpg';
+import colors from 'styles/colors';
 import styled from 'styled-components';
 
 const Container = styled.header`
   background-color: ${colors.primary};
   color: ${colors.alternateTextColor};
   display: grid;
+  grid-gap: ${spacing.small} ${spacing.medium};
   justify-items: center;
-
-  ${gridGap('medium')}
-  ${padding('large')}
+  padding: ${spacing.large} ${spacing.small};
+  text-align: center;
 
   ${media.min.sm`
     grid-template-columns: auto auto;
     justify-content: center;
     justify-items: initial;
+    text-align: initial;
   `}
 `;
 
@@ -29,10 +31,9 @@ const Avatar = styled(Image)`
   grid-row: span 2;
 `;
 
-const Heading = styled(Type.heading)`
+const StyledHeading = styled(Heading)`
   align-self: end;
-
-  ${margin.bottom('none')}
+  margin: 0;
 `;
 
 const Header = () => (
@@ -40,15 +41,15 @@ const Header = () => (
     <Avatar
       alt={translate('header.avatarAlt')}
       round
-      size={units(15)}
+      size={lines(6)}
       src={ben}
     />
 
-    <Heading>
+    <StyledHeading>
       <UnstyledLink to={'/'}>
         {translate('name')}
       </UnstyledLink>
-    </Heading>
+    </StyledHeading>
 
     <SocialNetworks />
   </Container>
