@@ -1,6 +1,9 @@
+/* eslint-disable no-process-env */
 const dotenv = require('dotenv');
 
 dotenv.config();
+
+const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
   plugins: [
@@ -20,7 +23,10 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
     },
     'gatsby-transformer-remark',
-    'gatsby-plugin-styled-components',
+    {
+      options: { displayName: !isProduction },
+      resolve: 'gatsby-plugin-styled-components',
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
@@ -35,11 +41,9 @@ module.exports = {
     },
     'gatsby-plugin-offline',
   ],
-  /* eslint-disable no-process-env */
   siteMetadata: {
     baseUrl: process.env.BASE_URL || '',
     remarkboxKey: process.env.REMARKBOX_KEY || '',
     title: 'Benjamim Sonntag',
   },
-  /* eslint-enable no-process-env */
 };
