@@ -9,18 +9,22 @@ const PostTitle = styled(Type.subheading)`
   ${margin.bottom('none')}
 `;
 
-const Blog = ({ posts }) => posts.map(post => (
-  <div key={post.id}>
-    <Link to={post.url}>
-      <PostTitle>
-        {post.title}
-      </PostTitle>
-    </Link>
+const Blog = ({ posts }) => (
+  <ul>
+    {posts.map(post => (
+      <li key={post.id}>
+        <PostTitle>
+          <Link to={post.url}>
+            {post.title}
+          </Link>
+        </PostTitle>
 
-    <Type.paragraph>
-      {renderDate(post.date)}
-    </Type.paragraph>
-  </div>
-));
+        <Type.paragraph>
+          {renderDate(post.date)}
+        </Type.paragraph>
+      </li>
+    ))}
+  </ul>
+);
 
 export default Blog;
