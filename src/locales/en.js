@@ -15,6 +15,9 @@ export default {
     hostedOn: ' and hosted on ',
     tech: 'Gatsby',
   },
+  header: {
+    avatarAlt: 'Photo of Benjamim Sonntag',
+  },
   home: {
     blog: {
       title: 'Blog',

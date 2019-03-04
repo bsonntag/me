@@ -85,3 +85,5 @@ margin.horizontal = createSpacing(['margin-left', 'margin-right'], spacing);
 margin.vertical = createSpacing(['margin-bottom', 'margin-top'], spacing);
 
 export { margin, padding };
+
+export const gridGap = createSpacing(['grid-gap'], spacing);
