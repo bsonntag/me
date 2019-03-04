@@ -19,9 +19,10 @@ const socialNetworks = [{
 }];
 
 const ScallingLink = styled(ExternalLink)`
+  display: block;
   transition: transform 200ms ease-in-out;
 
-  &:hover {
+  &:focus, &:hover {
     transform: scale(1.2);
   }
 `;
