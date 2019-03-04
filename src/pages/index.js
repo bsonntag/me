@@ -43,9 +43,9 @@ const Home = ({ data }) => {
         <Type.title>
           {translate('home.blog.title')}
         </Type.title>
-      </section>
 
-      <Blog posts={posts} />
+        <Blog posts={posts} />
+      </section>
     </PageLayout>
   );
 };
