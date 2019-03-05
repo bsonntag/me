@@ -121,10 +121,10 @@ Here's an example:
   allowfullscreen='true'
   allowtransparency='true'
   frameborder='no'
-  height='300'
+  height='336'
   scrolling='no'
   src='//codepen.io/bsonntag/embed/JmqVwB/?height=300&theme-id=0&default-tab=js,result'
-  style='width: 100%;'
+  style='display: block; width: 100%;'
   title='Ripple effect using React key'
 >
 See the Pen

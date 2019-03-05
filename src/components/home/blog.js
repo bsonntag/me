@@ -1,12 +1,11 @@
 import { Link } from 'gatsby';
-import { margin } from 'styles/spacing';
+import { Paragraph, SubTitle } from 'components/typography';
 import { renderDate } from 'utils/date';
 import React from 'react';
-import Type from 'components/type';
 import styled from 'styled-components';
 
-const PostTitle = styled(Type.subheading)`
-  ${margin.bottom('none')}
+const PostTitle = styled(SubTitle)`
+  margin-bottom: 0;
 `;
 
 const Blog = ({ posts }) => (
@@ -19,9 +18,9 @@ const Blog = ({ posts }) => (
           </Link>
         </PostTitle>
 
-        <Type.paragraph>
+        <Paragraph>
           {renderDate(post.date)}
-        </Type.paragraph>
+        </Paragraph>
       </li>
     ))}
   </ul>

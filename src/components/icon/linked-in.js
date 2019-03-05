@@ -1,6 +1,6 @@
-import { colors } from 'styles';
 import React from 'react';
 import Svg from './svg';
+import colors from 'styles/colors';
 
 const LinkedIn = props => (
   <Svg

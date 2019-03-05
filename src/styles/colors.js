@@ -1,7 +1,7 @@
 const black = '#000000';
 const white = '#ffffff';
 
-export const colors = {
+export default {
   alternateTextColor: white,
   black,
   facebookBlue: '#3b5998',

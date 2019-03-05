@@ -1,9 +1,9 @@
+import { Heading, Paragraph, Title } from 'components/typography';
 import { graphql } from 'gatsby';
 import { translate } from 'locales';
 import Blog from 'components/home/blog';
 import PageLayout from 'components/page-layout';
 import React from 'react';
-import Type from 'components/type';
 
 const Home = ({ data }) => {
   const posts = data.allMarkdownRemark.edges.map(({ node }) => ({
@@ -15,34 +15,34 @@ const Home = ({ data }) => {
 
   return (
     <PageLayout baseUrl={data.site.siteMetadata.baseUrl}>
-      <Type.heading>
+      <Heading>
         {translate('home.heading')}
-      </Type.heading>
+      </Heading>
 
       <section>
-        <Type.title>
+        <Title>
           {translate('home.whatIDo.title')}
-        </Type.title>
+        </Title>
 
-        <Type.paragraph raw>
+        <Paragraph raw>
           {translate('home.whatIDo.description')}
-        </Type.paragraph>
+        </Paragraph>
       </section>
 
       <section>
-        <Type.title>
+        <Title>
           {translate('home.work.title')}
-        </Type.title>
+        </Title>
 
-        <Type.paragraph raw>
+        <Paragraph raw>
           {translate('home.work.description')}
-        </Type.paragraph>
+        </Paragraph>
       </section>
 
       <section>
-        <Type.title>
+        <Title>
           {translate('home.blog.title')}
-        </Type.title>
+        </Title>
 
         <Blog posts={posts} />
       </section>

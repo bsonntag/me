@@ -1,8 +1,8 @@
+import { Heading, Paragraph } from 'components/typography';
 import { Link, graphql } from 'gatsby';
 import { translate } from 'locales';
 import PageLayout from 'components/page-layout';
 import React from 'react';
-import Type from 'components/type';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -11,22 +11,23 @@ const Container = styled.div`
   flex-direction: column;
   height: 100%;
   justify-content: center;
+  text-align: center;
 `;
 
 const NotFound = ({ data }) => (
   <PageLayout baseUrl={data.site.siteMetadata.baseUrl} >
     <Container>
-      <Type.heading>
+      <Heading>
         {translate('notFound.title')}
-      </Type.heading>
+      </Heading>
 
-      <Type.paragraph>
+      <Paragraph>
         {translate('notFound.go')}
 
         <Link to={'/'}>
           {translate('notFound.home')}
         </Link>
-      </Type.paragraph>
+      </Paragraph>
     </Container>
   </PageLayout>
 );

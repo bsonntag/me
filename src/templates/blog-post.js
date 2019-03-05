@@ -1,17 +1,17 @@
+import { Heading, Paragraph, SubTitle } from 'components/typography';
 import { Helmet } from 'react-helmet';
 import { compose, head, replace, split, trim } from 'lodash/fp';
 import { graphql } from 'gatsby';
 import { ifProp } from 'styled-tools';
-import { margin } from 'styles';
 import { renderDate } from 'utils/date';
 import { resolve } from 'url';
+import { spacing } from 'styles/spacing';
 import { translate } from 'locales';
 import CommentBox from 'components/comment-box';
 import Markdown from 'components/markdown';
 import PageLayout from 'components/page-layout';
 import React, { Fragment } from 'react';
 import Share from 'components/share';
-import Type from 'components/type';
 import styled, { css } from 'styled-components';
 
 const getFirstParagraph = compose(
@@ -21,26 +21,25 @@ const getFirstParagraph = compose(
   split('\n\n')
 );
 
-const Title = styled(Type.heading)`
-  ${margin.bottom('none')}
+const Title = styled(Heading)`
+  margin-bottom: 0;
 `;
 
-const PostDate = styled(Type.paragraph)`
-  ${margin.bottom('medium')}
+const PostDate = styled(Paragraph)`
+  margin-bottom: ${spacing.medium};
 `;
 
 const StyledShare = styled(Share)`
   justify-content: flex-end;
-
-  ${margin.top('large')}
+  margin-top: ${spacing.large};
 
   ${ifProp('hasCommentSection', css`
-    ${margin.bottom('medium')}
+    margin-bottom: ${spacing.medium};
   `)}
 `;
 
-const CommentsTitle = styled(Type.subheading)`
-  ${margin.bottom('small')}
+const CommentsTitle = styled(SubTitle)`
+  margin-bottom: ${spacing.small};
 `;
 
 const BlogPost = ({ data, location }) => {

@@ -1,4 +1,4 @@
-import { units } from 'styles';
+import { spacing } from 'styles/spacing';
 import LinkIcon from 'components/icon/link';
 import React from 'react';
 import styled from 'styled-components';
@@ -8,22 +8,36 @@ const AnchorContainer = styled.aside`
   bottom: 0;
   display: flex;
   justify-content: center;
-  padding-right: ${units(1)};
+  opacity: 0;
+  padding-right: ${spacing.small};
   position: absolute;
-  left: ${units(-2.5)};
-  top: 6px;
-  visibility: hidden;
+  left: -${spacing.small};
+  top: 0;
+  transition: opacity 200ms ease-in-out;
 
+  &:focus-within,
   &:hover {
-    visibility: visible;
+    opacity: 1;
   }
 `;
 
 const Container = styled.div`
   position: relative;
 
-  &:hover > ${AnchorContainer} {
-    visibility: visible;
+  &:focus-within,
+  &:hover {
+    & > ${AnchorContainer} {
+      opacity: 1;
+    }
+  }
+`;
+
+const ScallingLink = styled.a`
+  display: block;
+  transition: transform 200ms ease-in-out;
+
+  &:focus, &:hover {
+    transform: scale(1.4);
   }
 `;
 
@@ -36,11 +50,11 @@ const Container = styled.div`
 export const HeadingLink = ({ children, href }) => (
   <Container>
     <AnchorContainer aria-hidden>
-      <a href={href}>
+      <ScallingLink href={href}>
         <div>
-          <LinkIcon size={units(2)} />
+          <LinkIcon size={'1rem'} />
         </div>
-      </a>
+      </ScallingLink>
     </AnchorContainer>
 
     {children}
