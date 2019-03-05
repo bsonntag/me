@@ -1,3 +1,4 @@
+const { get } = require('lodash');
 const path = require('path');
 
 exports.createPages = ({ actions, graphql }) => {
@@ -12,6 +13,7 @@ exports.createPages = ({ actions, graphql }) => {
           node {
             frontmatter {
               path
+              title
             }
           }
         }
@@ -22,10 +24,15 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    const posts = result.data.allMarkdownRemark.edges;
+
+    posts.forEach(({ node }, index) => {
+      const next = get(posts, [index + 1, 'node']);
+      const previous = get(posts, [index - 1, 'node']);
+
       actions.createPage({
         component: blogPostTemplate,
-        context: {},
+        context: { next, previous },
         path: node.frontmatter.path,
       });
     });
