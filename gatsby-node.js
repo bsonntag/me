@@ -27,8 +27,8 @@ exports.createPages = ({ actions, graphql }) => {
     const posts = result.data.allMarkdownRemark.edges;
 
     posts.forEach(({ node }, index) => {
-      const next = get(posts, [index + 1, 'node']);
-      const previous = get(posts, [index - 1, 'node']);
+      const next = get(posts, [index - 1, 'node']);
+      const previous = get(posts, [index + 1, 'node']);
 
       actions.createPage({
         component: blogPostTemplate,
