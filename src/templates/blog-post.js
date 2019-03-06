@@ -1,17 +1,18 @@
 import { Heading, Paragraph, SubTitle } from 'components/typography';
 import { Helmet } from 'react-helmet';
+import { Link } from 'components/links/link';
 import { compose, head, replace, split, trim } from 'lodash/fp';
 import { graphql } from 'gatsby';
-import { ifProp } from 'styled-tools';
+import { ifProp, prop } from 'styled-tools';
 import { renderDate } from 'utils/date';
 import { resolve } from 'url';
 import { spacing } from 'styles/spacing';
 import { translate } from 'locales';
-import CommentBox from 'components/comment-box';
+import CommentBox from 'components/blog/comment-box';
 import Markdown from 'components/markdown';
 import PageLayout from 'components/page-layout';
-import React, { Fragment } from 'react';
-import Share from 'components/share';
+import React from 'react';
+import Share from 'components/blog/share';
 import styled, { css } from 'styled-components';
 
 const getFirstParagraph = compose(
@@ -38,11 +39,31 @@ const StyledShare = styled(Share)`
   `)}
 `;
 
+const CommentsContainer = styled.div`
+  margin-bottom: ${spacing.medium};
+`;
+
 const CommentsTitle = styled(SubTitle)`
   margin-bottom: ${spacing.small};
 `;
 
-const BlogPost = ({ data, location }) => {
+const LinksList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: ${spacing.small};
+  justify-content: ${prop('alignment', 'flex-start')};
+`;
+
+function getLinksAlignment(previous, next) {
+  if (previous && next) {
+    return 'space-between';
+  } else if (next) {
+    return 'flex-end';
+  }
+}
+
+const BlogPost = ({ data, location, pageContext }) => {
+  const { next, previous } = pageContext;
   const { baseUrl, remarkboxKey } = data.site.siteMetadata;
   const { frontmatter, rawMarkdownBody } = data.markdownRemark;
   const { date, title } = frontmatter;
@@ -80,7 +101,7 @@ const BlogPost = ({ data, location }) => {
       />
 
       {hasCommentSection && (
-        <Fragment>
+        <CommentsContainer>
           <CommentsTitle>
             {translate('blogPost.comments.title')}
           </CommentsTitle>
@@ -90,7 +111,29 @@ const BlogPost = ({ data, location }) => {
             threadFragment={location.hash}
             threadUri={resolve(baseUrl, location.pathname)}
           />
-        </Fragment>
+        </CommentsContainer>
+      )}
+
+      {(previous || next) && (
+        <LinksList alignment={getLinksAlignment(previous, next)}>
+          {previous && (
+            <li>
+              <Link to={previous.frontmatter.path}>
+                {'← '}
+                {previous.frontmatter.title}
+              </Link>
+            </li>
+          )}
+
+          {next && (
+            <li>
+              <Link to={next.frontmatter.path}>
+                {next.frontmatter.title}
+                {' →'}
+              </Link>
+            </li>
+          )}
+        </LinksList>
       )}
     </PageLayout>
   );
