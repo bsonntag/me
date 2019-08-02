@@ -109,6 +109,7 @@ const BlogPost = ({ data, location, pageContext }) => {
           <CommentBox
             remarkboxKey={remarkboxKey}
             threadFragment={location.hash}
+            threadTitle={title}
             threadUri={resolve(baseUrl, location.pathname)}
           />
         </CommentsContainer>
