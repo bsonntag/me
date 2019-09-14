@@ -1,5 +1,6 @@
 import { ExternalLink } from 'components/links';
 import { spacing } from 'styles/spacing';
+import { translate } from 'locales';
 import Icon from 'components/icon';
 import React from 'react';
 import styled from 'styled-components';
@@ -7,14 +8,17 @@ import styled from 'styled-components';
 const socialNetworks = [{
   Icon: Icon.github,
   key: 'github',
+  label: translate('socialNetworks.github'),
   url: 'https://github.com/bsonntag',
 }, {
   Icon: Icon.twitter,
   key: 'twitter',
+  label: translate('socialNetworks.twitter'),
   url: 'https://twitter.com/benjamimsonntag',
 }, {
   Icon: Icon.linkedIn,
   key: 'linkedIn',
+  label: translate('socialNetworks.linkedIn'),
   url: 'https://www.linkedin.com/in/benjamim-sonntag-6bb562aa/',
 }];
 
@@ -39,10 +43,16 @@ const ListItem = styled.li`
   }
 `;
 
-const SocialNetwork = ({ Icon, url }) => (
+const SocialNetwork = ({ Icon, label, url }) => (
   <ListItem>
-    <ScallingLink href={url}>
-      <Icon size={'2rem'} />
+    <ScallingLink
+      aria-label={label}
+      href={url}
+    >
+      <Icon
+        aria-hidden
+        size={'2rem'}
+      />
     </ScallingLink>
   </ListItem>
 );
