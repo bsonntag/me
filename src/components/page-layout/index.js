@@ -1,20 +1,19 @@
 import { contentSize, spacing } from 'styles/spacing';
+import { translate } from 'locales';
 import Footer from './footer';
 import GlobalStyle from 'components/global-style';
 import Header from './header';
 import Metatags from 'components/metatags';
 import React from 'react';
+import SkipLink from 'components/links/skip-link';
 import colors from 'styles/colors';
 import styled from 'styled-components';
 
-const Content = styled.main`
+const Main = styled.main`
   color: ${colors.textColor};
   margin: 0 auto;
   max-width: ${contentSize}rem;
-  margin-bottom: ${spacing.large};
-  margin-top: ${spacing.large};
-  padding-left: ${spacing.small};
-  padding-right: ${spacing.small};
+  padding: ${spacing.medium} ${spacing.small};
 `;
 
 const PageLayout = ({ baseUrl, children }) => (
@@ -23,11 +22,15 @@ const PageLayout = ({ baseUrl, children }) => (
 
     <GlobalStyle />
 
+    <SkipLink href={'#main'}>
+      {translate('skipToContent')}
+    </SkipLink>
+
     <Header />
 
-    <Content>
+    <Main id={'main'}>
       {children}
-    </Content>
+    </Main>
 
     <Footer />
   </>
