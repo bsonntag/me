@@ -56,6 +56,7 @@ export default {
     home: 'home.',
     title: 'How did you get here?',
   },
+  skipToContent: 'Skip to content',
   socialNetworks: {
     github: 'Github profile',
     linkedIn: 'LinkedIn profile',
