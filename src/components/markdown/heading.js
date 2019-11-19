@@ -23,9 +23,7 @@ const MarkdownHeading = ({ children, level }) => {
 
   return (
     <HeadingLink href={url}>
-      <Component id={id}>
-        {children}
-      </Component>
+      <Component id={id}>{children}</Component>
     </HeadingLink>
   );
 };

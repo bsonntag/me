@@ -17,11 +17,6 @@ const renderers = {
   root: Fragment,
 };
 
-const Markdown = props => (
-  <ReactMarkdown
-    {...props}
-    renderers={renderers}
-  />
-);
+const Markdown = props => <ReactMarkdown {...props} renderers={renderers} />;
 
 export default Markdown;

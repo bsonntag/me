@@ -15,25 +15,23 @@ const Home = ({ data }) => {
   return (
     <PageLayout baseUrl={data.site.siteMetadata.baseUrl}>
       <SubTitle as={'p'}>
-        {`Hello, I'm Benjamim Sonntag, a web developer.`}
+        Hello, I&apos;m Benjamim Sonntag, a web developer.
       </SubTitle>
 
       <section>
-        <Title>
-          {'What I do'}
-        </Title>
+        <Title>What I do</Title>
 
         <Paragraph>
-          {'I mostly do frontend work using React and Redux, but I also do some backend in Node and sometimes play around with Electron.'}
+          I mostly do frontend work using React and Redux, but I also do some
+          backend in Node and sometimes play around with Electron.
           <br />
-          {`Ever since I learned JavaScript I've been using it for pretty much everything, from small scripts to full web applications.`}
+          Ever since I learned JavaScript I&apos;ve been using it for pretty
+          much everything, from small scripts to full web applications.
         </Paragraph>
       </section>
 
       <section>
-        <Title>
-          {'Work'}
-        </Title>
+        <Title>Work</Title>
 
         <Paragraph>
           {`I'm currently working at `}
@@ -43,7 +41,7 @@ const Home = ({ data }) => {
             rel={'noreferrer noopener'}
             target={'_blank'}
           >
-            {'Seegno'}
+            Seegno
           </a>
 
           {' doing some awesome stuff. Before that, I helped '}
@@ -53,7 +51,7 @@ const Home = ({ data }) => {
             rel={'noreferrer noopener'}
             target={'_blank'}
           >
-            {'siosLIFE'}
+            siosLIFE
           </a>
 
           {' bring technology to the elderly.'}
@@ -61,9 +59,7 @@ const Home = ({ data }) => {
       </section>
 
       <section>
-        <Title>
-          {'Blog'}
-        </Title>
+        <Title>Blog</Title>
 
         <Blog posts={posts} />
       </section>

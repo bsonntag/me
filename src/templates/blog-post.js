@@ -33,9 +33,12 @@ const StyledShare = styled(Share)`
   justify-content: flex-end;
   margin-top: ${spacing.large};
 
-  ${ifProp('hasCommentSection', css`
-    margin-bottom: ${spacing.medium};
-  `)}
+  ${ifProp(
+    'hasCommentSection',
+    css`
+      margin-bottom: ${spacing.medium};
+    `
+  )}
 `;
 
 const CommentsContainer = styled.div`
@@ -72,9 +75,7 @@ const BlogPost = ({ data, location, pageContext }) => {
     <PageLayout baseUrl={baseUrl}>
       <article>
         <Helmet>
-          <title>
-            {title}
-          </title>
+          <title>{title}</title>
 
           <meta
             content={getFirstParagraph(rawMarkdownBody)}
@@ -82,13 +83,9 @@ const BlogPost = ({ data, location, pageContext }) => {
           />
         </Helmet>
 
-        <Title>
-          {title}
-        </Title>
+        <Title>{title}</Title>
 
-        <PostDate>
-          {renderDate(date)}
-        </PostDate>
+        <PostDate>{renderDate(date)}</PostDate>
 
         <Markdown source={rawMarkdownBody} />
       </article>
@@ -100,9 +97,7 @@ const BlogPost = ({ data, location, pageContext }) => {
 
       {hasCommentSection && (
         <CommentsContainer>
-          <CommentsTitle>
-            {'Comments'}
-          </CommentsTitle>
+          <CommentsTitle>Comments</CommentsTitle>
 
           <CommentBox
             remarkboxKey={remarkboxKey}

@@ -30,7 +30,11 @@ const Code = styled.code`
 const CodeBlock = ({ language, value }) => (
   <Container>
     <Pre>
-      <Code dangerouslySetInnerHTML={renderInnerHtml(highlightCode(value, language))} />
+      <Code
+        dangerouslySetInnerHTML={renderInnerHtml(
+          highlightCode(value, language)
+        )}
+      />
     </Pre>
   </Container>
 );

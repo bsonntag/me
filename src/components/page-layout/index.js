@@ -18,19 +18,11 @@ const Main = styled.main`
 const PageLayout = ({ baseUrl, children }) => (
   <>
     <Metatags baseUrl={baseUrl} />
-
     <GlobalStyle />
 
-    <SkipLink href={'#main'}>
-      {'Skip to content'}
-    </SkipLink>
-
+    <SkipLink href={'#main'}>Skip to content</SkipLink>
     <Header />
-
-    <Main id={'main'}>
-      {children}
-    </Main>
-
+    <Main id={'main'}>{children}</Main>
     <Footer />
   </>
 );

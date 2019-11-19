@@ -37,19 +37,10 @@ const StyledHeading = styled(Heading)`
 
 const Header = () => (
   <Container>
-    <Avatar
-      alt={'Photo of Benjamim Sonntag'}
-      round
-      size={lines(6)}
-      src={ben}
-    />
-
+    <Avatar alt={'Photo of Benjamim Sonntag'} round size={lines(6)} src={ben} />
     <StyledHeading>
-      <UnstyledLink to={'/'}>
-        {'Benjamim Sonntag'}
-      </UnstyledLink>
+      <UnstyledLink to={'/'}>Benjamim Sonntag</UnstyledLink>
     </StyledHeading>
-
     <SocialNetworks />
   </Container>
 );

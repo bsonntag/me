@@ -5,7 +5,8 @@ import Icon from 'components/icon';
 import React from 'react';
 import styled from 'styled-components';
 
-const facebookUrl = url => `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+const facebookUrl = url =>
+  `https://www.facebook.com/sharer/sharer.php?u=${url}`;
 
 const twitterUrl = url => `https://twitter.com/home?status=${url}`;
 
@@ -23,35 +24,22 @@ const ScallingLink = styled(ExternalLink)`
   display: block;
   transition: transform 200ms ease-in-out;
 
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     transform: scale(1.4);
   }
 `;
 
 const Share = ({ className, url }) => (
   <Container className={className}>
-    <Caption>
-      {'Share this on:'}
-    </Caption>
+    <Caption>{'Share this on:'}</Caption>
 
-    <ScallingLink
-      aria-label={'Facebook'}
-      href={facebookUrl(url)}
-    >
-      <Icon.facebook
-        aria-hidden
-        size={'2rem'}
-      />
+    <ScallingLink aria-label={'Facebook'} href={facebookUrl(url)}>
+      <Icon.facebook aria-hidden size={'2rem'} />
     </ScallingLink>
 
-    <ScallingLink
-      aria-label={'Twitter'}
-      href={twitterUrl(url)}
-    >
-      <Icon.twitter
-        aria-hidden
-        size={'2rem'}
-      />
+    <ScallingLink aria-label={'Twitter'} href={twitterUrl(url)}>
+      <Icon.twitter aria-hidden size={'2rem'} />
     </ScallingLink>
   </Container>
 );

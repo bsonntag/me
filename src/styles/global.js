@@ -42,11 +42,17 @@ export const globalStyle = css`
     color: inherit;
   }
 
-  h1, h2, h3, h4, p, pre {
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  pre {
     margin: 0;
   }
 
-  ol, ul {
+  ol,
+  ul {
     list-style: none;
     margin: 0;
     padding: 0;
