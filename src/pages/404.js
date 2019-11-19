@@ -14,17 +14,13 @@ const Container = styled.div`
 `;
 
 const NotFound = ({ data }) => (
-  <PageLayout baseUrl={data.site.siteMetadata.baseUrl} >
+  <PageLayout baseUrl={data.site.siteMetadata.baseUrl}>
     <Container>
-      <Heading>
-        {'How did you get here?'}
-      </Heading>
+      <Heading>How did you get here?</Heading>
 
       <Paragraph>
         {'You should probably go '}
-        <Link to={'/'}>
-          {'home.'}
-        </Link>
+        <Link to={'/'}>home.</Link>
       </Paragraph>
     </Container>
   </PageLayout>

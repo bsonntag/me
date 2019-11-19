@@ -1,4 +1,3 @@
-/* eslint-disable no-process-env */
 const dotenv = require('dotenv');
 
 dotenv.config();
@@ -34,8 +33,8 @@ module.exports = {
         display: 'minimal-ui',
         icon: 'src/images/ben.jpg',
         name: 'Benjamim Sonntag',
-        start_url: '/', // eslint-disable-line id-match
-        theme_color: '#000000', // eslint-disable-line id-match
+        start_url: '/',
+        theme_color: '#000000',
       },
       resolve: 'gatsby-plugin-manifest',
     },

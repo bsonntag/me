@@ -11,9 +11,9 @@ const Container = styled.div`
 `;
 
 const Grid = styled.div`
-  background:
-    rgba(0, 0, 0, 0) linear-gradient(rgba(0, 119, 179, 0.2) 1px, transparent 1px)
-    repeat scroll left top / ${smallLineHeight}px ${smallLineHeight}px;
+  background: rgba(0, 0, 0, 0)
+    linear-gradient(rgba(0, 119, 179, 0.2) 1px, transparent 1px) repeat scroll
+    left top / ${smallLineHeight}px ${smallLineHeight}px;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -76,7 +76,7 @@ const TypeGrid = ({ children }) => {
 
       <ToggleContainer isVisible={isVisible}>
         <Toggle>
-          {'Toggle Grid'}
+          Toggle Grid
           <Checkbox
             checked={isVisible}
             onChange={() => setIsVisible(isVisible => !isVisible)}

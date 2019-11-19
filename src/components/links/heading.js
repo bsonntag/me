@@ -36,7 +36,8 @@ const ScallingLink = styled.a`
   display: block;
   transition: transform 200ms ease-in-out;
 
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     transform: scale(1.4);
   }
 `;

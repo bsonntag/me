@@ -33,20 +33,13 @@ const Footer = () => (
     <Content>
       <Caption>
         {renderCopyright()}
-        <Link to={'/'}>
-          {'Benjamim Sonntag'}
-        </Link>
+        <Link to={'/'}>Benjamim Sonntag</Link>
       </Caption>
-
       <Caption>
         {'Built with '}
-        <ExternalLink href={'https://www.gatsbyjs.org/'}>
-          {'Gatsby'}
-        </ExternalLink>
+        <ExternalLink href={'https://www.gatsbyjs.org/'}>Gatsby</ExternalLink>
         {' and hosted on '}
-        <ExternalLink href={'https://www.netlify.com/'}>
-          {'Netlify'}
-        </ExternalLink>
+        <ExternalLink href={'https://www.netlify.com/'}>Netlify</ExternalLink>
       </Caption>
     </Content>
   </Container>

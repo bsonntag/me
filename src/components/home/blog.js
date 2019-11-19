@@ -13,14 +13,10 @@ const Blog = ({ posts }) => (
     {posts.map(post => (
       <li key={post.id}>
         <PostTitle>
-          <Link to={post.url}>
-            {post.title}
-          </Link>
+          <Link to={post.url}>{post.title}</Link>
         </PostTitle>
 
-        <Paragraph>
-          {renderDate(post.date)}
-        </Paragraph>
+        <Paragraph>{renderDate(post.date)}</Paragraph>
       </li>
     ))}
   </ul>
