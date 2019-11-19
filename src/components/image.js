@@ -1,7 +1,8 @@
 import { ifProp, prop } from 'styled-tools';
+import GatsbyImage from 'gatsby-image';
 import styled from 'styled-components';
 
-const Image = styled.img`
+const Image = styled(GatsbyImage)`
   height: ${prop('size')};
   width: ${prop('size')};
 
