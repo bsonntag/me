@@ -1,7 +1,6 @@
 import { Caption } from 'components/typography';
 import { ExternalLink, Link } from 'components/links';
 import { contentSize, spacing } from 'styles/spacing';
-import { translate } from 'locales';
 import React from 'react';
 import colors from 'styles/colors';
 import styled from 'styled-components';
@@ -34,23 +33,19 @@ const Footer = () => (
     <Content>
       <Caption>
         {renderCopyright()}
-
         <Link to={'/'}>
-          {translate('name')}
+          {'Benjamim Sonntag'}
         </Link>
       </Caption>
 
       <Caption>
-        {translate('footer.builtWith')}
-
+        {'Built with '}
         <ExternalLink href={'https://www.gatsbyjs.org/'}>
-          {translate('footer.tech')}
+          {'Gatsby'}
         </ExternalLink>
-
-        {translate('footer.hostedOn')}
-
+        {' and hosted on '}
         <ExternalLink href={'https://www.netlify.com/'}>
-          {translate('footer.host')}
+          {'Netlify'}
         </ExternalLink>
       </Caption>
     </Content>

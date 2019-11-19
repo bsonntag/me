@@ -1,6 +1,5 @@
-import { Heading, Paragraph, Title } from 'components/typography';
+import { Paragraph, SubTitle, Title } from 'components/typography';
 import { graphql } from 'gatsby';
-import { translate } from 'locales';
 import Blog from 'components/home/blog';
 import PageLayout from 'components/page-layout';
 import React from 'react';
@@ -15,33 +14,55 @@ const Home = ({ data }) => {
 
   return (
     <PageLayout baseUrl={data.site.siteMetadata.baseUrl}>
-      <Heading>
-        {translate('home.heading')}
-      </Heading>
+      <SubTitle as={'p'}>
+        {`Hello, I'm Benjamim Sonntag, a web developer.`}
+      </SubTitle>
 
       <section>
         <Title>
-          {translate('home.whatIDo.title')}
+          {'What I do'}
         </Title>
 
-        <Paragraph raw>
-          {translate('home.whatIDo.description')}
+        <Paragraph>
+          {'I mostly do frontend work using React and Redux, but I also do some backend in Node and sometimes play around with Electron.'}
+          <br />
+          {`Ever since I learned JavaScript I've been using it for pretty much everything, from small scripts to full web applications.`}
         </Paragraph>
       </section>
 
       <section>
         <Title>
-          {translate('home.work.title')}
+          {'Work'}
         </Title>
 
-        <Paragraph raw>
-          {translate('home.work.description')}
+        <Paragraph>
+          {`I'm currently working at `}
+
+          <a
+            href={'https://seegno.com'}
+            rel={'noreferrer noopener'}
+            target={'_blank'}
+          >
+            {'Seegno'}
+          </a>
+
+          {' doing some awesome stuff. Before that, I helped '}
+
+          <a
+            href={'https://sioslife.com'}
+            rel={'noreferrer noopener'}
+            target={'_blank'}
+          >
+            {'siosLIFE'}
+          </a>
+
+          {' bring technology to the elderly.'}
         </Paragraph>
       </section>
 
       <section>
         <Title>
-          {translate('home.blog.title')}
+          {'Blog'}
         </Title>
 
         <Blog posts={posts} />

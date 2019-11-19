@@ -1,23 +1,24 @@
 import { Helmet } from 'react-helmet';
 import { resolve } from 'url';
-import { translate } from 'locales';
 import React from 'react';
 import ben from 'images/ben.jpg';
 
 const titleTemplatePrefix = '%s - ';
+const name = 'Benjamim Sonntag';
+const description = `The personal webpage of ${name}.`;
 
 const Metatags = ({ baseUrl }) => (
   <Helmet
-    defaultTitle={translate('meta.title')}
-    titleTemplate={titleTemplatePrefix + translate('meta.title')}
+    defaultTitle={name}
+    titleTemplate={titleTemplatePrefix + name}
   >
     <meta
-      content={translate('meta.author')}
+      content={name}
       property={'author'}
     />
 
     <meta
-      content={translate('meta.description')}
+      content={description}
       property={'description'}
     />
 
@@ -27,17 +28,17 @@ const Metatags = ({ baseUrl }) => (
     />
 
     <meta
-      content={translate('meta.siteName')}
+      content={'bsonntag.me'}
       property={'og:site_name'}
     />
 
     <meta
-      content={translate('meta.description')}
+      content={description}
       property={'og:description'}
     />
 
     <meta
-      content={translate('meta.twitterHandle')}
+      content={'@benjamimsonntag'}
       name={'twitter:creator'}
     />
   </Helmet>

@@ -28,18 +28,30 @@ const ScallingLink = styled(ExternalLink)`
   }
 `;
 
-const Share = ({ className, label, url }) => (
+const Share = ({ className, url }) => (
   <Container className={className}>
     <Caption>
-      {label}
+      {'Share this on:'}
     </Caption>
 
-    <ScallingLink href={facebookUrl(url)}>
-      <Icon.facebook size={'2rem'} />
+    <ScallingLink
+      aria-label={'Facebook'}
+      href={facebookUrl(url)}
+    >
+      <Icon.facebook
+        aria-hidden
+        size={'2rem'}
+      />
     </ScallingLink>
 
-    <ScallingLink href={twitterUrl(url)}>
-      <Icon.twitter size={'2rem'} />
+    <ScallingLink
+      aria-label={'Twitter'}
+      href={twitterUrl(url)}
+    >
+      <Icon.twitter
+        aria-hidden
+        size={'2rem'}
+      />
     </ScallingLink>
   </Container>
 );

@@ -1,6 +1,5 @@
 import { Heading, Paragraph } from 'components/typography';
 import { Link, graphql } from 'gatsby';
-import { translate } from 'locales';
 import PageLayout from 'components/page-layout';
 import React from 'react';
 import styled from 'styled-components';
@@ -18,14 +17,13 @@ const NotFound = ({ data }) => (
   <PageLayout baseUrl={data.site.siteMetadata.baseUrl} >
     <Container>
       <Heading>
-        {translate('notFound.title')}
+        {'How did you get here?'}
       </Heading>
 
       <Paragraph>
-        {translate('notFound.go')}
-
+        {'You should probably go '}
         <Link to={'/'}>
-          {translate('notFound.home')}
+          {'home.'}
         </Link>
       </Paragraph>
     </Container>
