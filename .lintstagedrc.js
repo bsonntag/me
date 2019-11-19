@@ -1,12 +1,4 @@
 module.exports = {
-  linters: {
-    '*.js': [
-      'eslint --fix',
-      'git add',
-    ],
-    'package.json': [
-      'sort-package-json',
-      'git add',
-    ],
-  },
+  '*.js': ['eslint --fix', 'prettier --write', 'git add'],
+  'package.json': ['sort-package-json', 'git add'],
 };
