@@ -1,6 +1,5 @@
 import { ExternalLink } from 'components/links';
 import { spacing } from 'styles/spacing';
-import { translate } from 'locales';
 import Icon from 'components/icon';
 import React from 'react';
 import styled from 'styled-components';
@@ -8,17 +7,17 @@ import styled from 'styled-components';
 const socialNetworks = [{
   Icon: Icon.github,
   key: 'github',
-  label: translate('socialNetworks.github'),
+  label: 'Github profile',
   url: 'https://github.com/bsonntag',
 }, {
   Icon: Icon.twitter,
   key: 'twitter',
-  label: translate('socialNetworks.twitter'),
+  label: 'Twitter profile',
   url: 'https://twitter.com/benjamimsonntag',
 }, {
   Icon: Icon.linkedIn,
   key: 'linkedIn',
-  label: translate('socialNetworks.linkedIn'),
+  label: 'LinkedIn profile',
   url: 'https://www.linkedin.com/in/benjamim-sonntag-6bb562aa/',
 }];
 

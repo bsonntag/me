@@ -7,7 +7,6 @@ import { ifProp, prop } from 'styled-tools';
 import { renderDate } from 'utils/date';
 import { resolve } from 'url';
 import { spacing } from 'styles/spacing';
-import { translate } from 'locales';
 import CommentBox from 'components/blog/comment-box';
 import Markdown from 'components/markdown';
 import PageLayout from 'components/page-layout';
@@ -96,14 +95,13 @@ const BlogPost = ({ data, location, pageContext }) => {
 
       <StyledShare
         hasCommentSection={hasCommentSection}
-        label={translate('blogPost.share')}
         url={baseUrl + location.pathname}
       />
 
       {hasCommentSection && (
         <CommentsContainer>
           <CommentsTitle>
-            {translate('blogPost.comments.title')}
+            {'Comments'}
           </CommentsTitle>
 
           <CommentBox

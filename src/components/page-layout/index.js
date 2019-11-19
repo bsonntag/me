@@ -1,5 +1,4 @@
 import { contentSize, spacing } from 'styles/spacing';
-import { translate } from 'locales';
 import Footer from './footer';
 import GlobalStyle from 'components/global-style';
 import Header from './header';
@@ -23,7 +22,7 @@ const PageLayout = ({ baseUrl, children }) => (
     <GlobalStyle />
 
     <SkipLink href={'#main'}>
-      {translate('skipToContent')}
+      {'Skip to content'}
     </SkipLink>
 
     <Header />

@@ -2,7 +2,6 @@ import { Heading } from 'components/typography';
 import { UnstyledLink } from 'components/links';
 import { lines, spacing } from 'styles/spacing';
 import { media } from 'styles/media';
-import { translate } from 'locales';
 import Image from 'components/image';
 import React from 'react';
 import SocialNetworks from 'components/social-networks';
@@ -39,7 +38,7 @@ const StyledHeading = styled(Heading)`
 const Header = () => (
   <Container>
     <Avatar
-      alt={translate('header.avatarAlt')}
+      alt={'Photo of Benjamim Sonntag'}
       round
       size={lines(6)}
       src={ben}
@@ -47,7 +46,7 @@ const Header = () => (
 
     <StyledHeading>
       <UnstyledLink to={'/'}>
-        {translate('name')}
+        {'Benjamim Sonntag'}
       </UnstyledLink>
     </StyledHeading>
 
