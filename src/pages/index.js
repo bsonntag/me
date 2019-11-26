@@ -15,7 +15,8 @@ const Home = ({ data }) => {
   return (
     <PageLayout baseUrl={data.site.siteMetadata.baseUrl}>
       <SubTitle as={'p'}>
-        Hello, I&apos;m Benjamim Sonntag, a web developer.
+        {`Hello, I'm Benjamim Sonntag, a web developer and `}
+        <a href={'https://bsonntag-concerts.netlify.com'}>metalhead.</a>
       </SubTitle>
 
       <section>
