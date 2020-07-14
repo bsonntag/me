@@ -1,0 +1,20 @@
+.footer {
+  color: var(--textColor);
+  margin: 0 auto;
+  max-width: var(--contentSize);
+  padding-left: var(--smallSpace);
+  padding-right: var(--smallSpace);
+}
+
+.footer__content {
+  border-top: 2px solid var(--secondary);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-bottom: var(--largeSpace);
+  padding-top: var(--largeSpace);
+
+  & > :not(:last-child) {
+    margin-right: var(--smallSpace);
+  }
+}

@@ -6,80 +6,31 @@
   "repository": "https://github.com/bsonntag/bsonntag.github.io",
   "license": "UNLICENSED",
   "author": "Benjamim Sonntag <benjamimsonntag@gmail.com>",
-  "main": "./src/index.js",
   "scripts": {
-    "bundle": "gatsby build",
+    "bundle": "parcel build --out-dir public src/index.html",
     "lint": "eslint .",
-    "start": "gatsby develop",
-    "test": "jest",
-    "test:watch": "jest --watch --notify"
-  },
-  "jest": {
-    "coverageDirectory": "coverage",
-    "coveragePathIgnorePatterns": [
-      "jest-setup.js"
-    ],
-    "coverageReporters": [
-      "html",
-      "lcov",
-      "text"
-    ],
-    "globals": {
-      "__PATH_PREFIX__": ""
-    },
-    "setupFilesAfterEnv": [
-      "./jest-setup.js"
-    ],
-    "testPathIgnorePatterns": [
-      "node_modules",
-      ".cache"
-    ],
-    "transform": {
-      "^.+\\.js?$": "./jest-preprocess.js"
-    },
-    "transformIgnorePatterns": [
-      "node_modules/(?!(gatsby)/)"
-    ]
+    "start": "concurrently \"node bin/watcher.js\" \"parcel --out-dir public src/index.html\""
   },
   "dependencies": {
-    "lodash": "^4.17.15",
-    "prismjs": "^1.17.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1",
-    "react-markdown": "^3.6.0",
-    "react-remarkbox": "^0.2.0",
-    "styled-components": "^4.4.1",
-    "styled-normalize": "^8.0.6",
-    "styled-tools": "^1.7.1"
+    "autoprefixer": "^9.8.5",
+    "parcel": "^1.12.4",
+    "parcel-plugin-ogimage": "^1.2.0",
+    "postcss-nesting": "^7.0.1",
+    "posthtml-modules": "^0.6.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.2",
-    "@babel/preset-env": "^7.7.1",
-    "@babel/preset-react": "^7.7.0",
-    "@bsonntag/eslint-config": "^0.5.0",
-    "babel-core": "^7.0.0-bridge",
-    "babel-jest": "^24.9.0",
-    "babel-plugin-module-resolver": "^3.2.0",
-    "babel-plugin-styled-components": "^1.10.6",
-    "eslint": "^6.6.0",
-    "gatsby": "^2.18.0",
-    "gatsby-image": "^2.2.33",
-    "gatsby-plugin-manifest": "^2.2.29",
-    "gatsby-plugin-offline": "^3.0.22",
-    "gatsby-plugin-react-helmet": "^3.1.15",
-    "gatsby-plugin-sharp": "^2.3.2",
-    "gatsby-plugin-styled-components": "^3.1.13",
-    "gatsby-source-filesystem": "^2.1.38",
-    "gatsby-transformer-remark": "^2.6.37",
-    "gatsby-transformer-sharp": "^2.3.5",
-    "husky": "^3.1.0",
-    "jest": "^24.9.0",
-    "jest-dom": "^3.5.0",
-    "jest-styled-components": "^6.3.4",
-    "lint-staged": "^9.4.3",
-    "prettier": "^1.19.1",
-    "react-testing-library": "^6.1.2",
-    "sort-package-json": "^1.23.1"
+    "@bsonntag/eslint-config": "^0.6.0",
+    "chokidar": "^3.4.0",
+    "concurrently": "^5.2.0",
+    "eslint": "^6.8.0",
+    "htmlhint": "^0.14.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "nesting": "^0.1.0",
+    "prettier": "^2.0.5",
+    "sharp": "^0.25.4"
+  },
+  "engines": {
+    "node": ">=10"
   }
 }

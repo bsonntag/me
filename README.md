@@ -1,6 +1,7 @@
-# My personal page
+# My personal webpage
 
-This is the source of my personal page: [bsonntag.me](http://bsonntag.me).
+This is the source of my personal webpage:
+[bsonntag.netlify.com](https://bsonntag.netlify.com).
 
 ## Requirements
 
@@ -14,9 +15,9 @@ Clone this repository and install the dependencies with `yarn install`.
 
 ## Development
 
-This website is build with Gatsby.
-A local server for development can be run with `yarn start`.  
-It will run on port 8000, so you can access it on http://localhost:8000.
+This website is built with Parcel.
+A local server for development can be run with `yarn start`.
+It will run on port 1234, so you can access it on http://localhost:1234.
 
 ## Build
 

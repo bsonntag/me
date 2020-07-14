@@ -1,0 +1,14 @@
+@import './styles/reset.css';
+@import './styles/colors.css';
+@import './styles/spacing.css';
+@import './styles/typography.css';
+@import './components/header.css';
+@import './components/footer.css';
+@import './components/skip-link.css';
+
+main {
+  color: var(--textColor);
+  margin: 0 auto;
+  max-width: var(--contentSize);
+  padding: var(--mediumSpace) var(--smallSpace);
+}

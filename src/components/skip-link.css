@@ -1,0 +1,20 @@
+.skip-link {
+  background-color: white;
+  color: var(--textColor);
+  left: 0;
+  outline: none;
+  padding: var(--smallSpace);
+  position: fixed;
+  text-decoration: none;
+  top: 0;
+  transform: translateY(-100%);
+  transition: transform 200ms ease-in-out;
+
+  &:focus {
+    transform: translateY(0);
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
