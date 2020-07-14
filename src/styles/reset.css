@@ -1,0 +1,23 @@
+html {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  color: transparent;
+}
+
+* {
+  box-sizing: inherit;
+  padding: 0;
+  border: 0;
+  margin: 0;
+}

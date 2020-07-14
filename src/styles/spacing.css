@@ -1,0 +1,9 @@
+:root {
+  --contentSize: 46rem;
+
+  --baseSpace: 1.5rem;
+  --tinySpace: calc(var(--baseSpace) * 0.5);
+  --smallSpace: var(--baseSpace);
+  --mediumSpace: calc(var(--baseSpace) * 2);
+  --largeSpace: calc(var(--baseSpace) * 3);
+}

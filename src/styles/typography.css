@@ -1,0 +1,68 @@
+:root {
+  --defaultFontFamily: 'Open Sans', sans-serif;
+  --titleFontFamily: 'Lato', sans-serif;
+
+  --lineHeightScale: 1.5;
+
+  --defaultFontSize: 16px;
+  --defaultLineHeight: calc(var(--defaultFontSize) * var(--lineHeightScale));
+
+  --smallFontSize: 14px;
+  --smallLineHeight: calc(var(--smallFontSize) * var(--lineHeightScale));
+}
+
+html {
+  font-family: var(--defaultFontFamily);
+  font-size: var(--smallFontSize);
+  line-height: var(--smallLineHeight);
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: var(--defaultFontSize);
+    line-height: var(--defaultLineHeight);
+  }
+}
+
+h1,
+.heading {
+  font-family: var(--titleFontFamily);
+  font-size: 3.375em;
+  font-weight: normal;
+  letter-spacing: -0.75px;
+  line-height: var(--largeSpace);
+  margin-bottom: var(--mediumSpace);
+  margin-top: var(--smallSpace);
+}
+
+h2,
+.title {
+  font-family: var(--titleFontFamily);
+  font-size: 2.25rem;
+  font-weight: bold;
+  letter-spacing: -0.25px;
+  line-height: var(--mediumSpace);
+  margin-bottom: var(--smallSpace);
+  margin-top: var(--mediumSpace);
+}
+
+h3,
+.subtitle {
+  font-family: var(--titleFontFamily);
+  font-size: 1.5rem;
+  font-weight: normal;
+  line-height: var(--mediumSpace);
+  margin-top: var(--smallSpace);
+}
+
+p,
+.paragraph {
+  font-weight: normal;
+  margin-bottom: var(--smallSpace);
+}
+
+small,
+.caption {
+  font-size: var(--smallFontSize);
+  font-weight: normal;
+}
