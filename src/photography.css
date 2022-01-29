@@ -1,0 +1,34 @@
+@import './styles/reset.css';
+@import './styles/colors.css';
+@import './styles/spacing.css';
+@import './styles/typography.css';
+@import './components/header.css';
+@import './components/footer.css';
+@import './components/skip-link.css';
+
+body {
+  background: var(--primary);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+}
+
+main {
+  background: var(--primary);
+  position: relative;
+}
+
+.photography-item {
+  display: grid;
+  place-content: center;
+  margin: 0 var(--tinySpace) var(--mediumSpace);
+}
+
+.photo {
+  display: block;
+  height: auto;
+  width: 100%;
+  max-width: 1200px;
+}

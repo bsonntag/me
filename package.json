@@ -7,10 +7,10 @@
   "license": "UNLICENSED",
   "author": "Benjamim Sonntag <benjamimsonntag@gmail.com>",
   "scripts": {
-    "bundle": "parcel build --out-dir public src/index.html && cp -r static/ public/",
+    "bundle": "parcel build --out-dir public src/*.html && cp -r static/ public/",
     "lint": "eslint .",
     "lint-staged": "lint-staged",
-    "start": "concurrently \"node bin/watcher.js\" \"parcel --out-dir public src/index.html\""
+    "start": "concurrently \"node bin/watcher.js\" \"parcel --out-dir public src/*.html\""
   },
   "pre-commit": [
     "lint-staged"
