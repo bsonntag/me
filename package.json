@@ -31,7 +31,7 @@
     "lint-staged": "^12.3.2",
     "pre-commit": "^1.2.2",
     "prettier": "^2.5.1",
-    "sharp": "^0.30.5"
+    "sharp": "^0.32.6"
   },
   "engines": {
     "node": ">=12"
